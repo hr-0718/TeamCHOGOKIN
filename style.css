@@ -1,0 +1,468 @@
+
+@font-face {
+    font-family: 'textmain';
+    src: url('./assets/Kazesawa-Semibold.ttf');
+}
+@font-face {
+    font-family: 'texttitle';
+    src: url('./assets/oshigo.otf');
+}
+@font-face {
+    font-family: 'textName';
+    src: url('./assets/Kazesawa-ExtraBold.ttf');
+}
+@font-face {
+    font-family: 'textNum';
+    src: url('./assets/Kazesawa-Bold.ttf');
+}
+@font-face {
+    font-family: 'textGame';
+    src: url('./assets/Stick-Regular.ttf');
+}
+
+:root{
+    --vh: 0;
+}
+body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background-color: black ;
+}
+img {
+    pointer-events: none; /* マウス操作を無効化 */
+    user-select: none; /* テキストや画像の選択を無効化 */
+}
+input[type="range"] {
+    -webkit-appearance: none; 
+    appearance: none;
+    cursor: pointer; 
+    outline: none;
+    &:focus {
+       box-shadow: 0 0 3px rgb(0, 0, 0);
+    }
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: gray;
+    width: 16px; 
+    height: 16px; 
+    border-radius: 50%; 
+    border: solid 2px white;
+}
+
+.canvasParent {
+    pointer-events: none;
+    padding: 0;
+    background: none;
+    height: var(--vh);
+    width: var(--vw);
+    position: fixed;
+}
+ 
+.canvasChild {
+    pointer-events: none;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 0;
+}
+.imgPixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-pixelated;
+    image-rendering: -webkit-pixelated;
+    image-rendering: -o-pixelated;
+    image-rendering: -ms-pixelated;
+}
+
+.screenPriorityWidth {
+    width: 90%;
+    height: auto; 
+}
+.screenPriorityHeight {
+    width: auto; 
+    height: 90%; 
+}
+
+unselectable {
+    user-select: none;
+}
+
+.unselectable::selection {
+    background: none;
+}
+
+.unselectable::-moz-selection {
+    background: none;
+}
+
+.select_moji {
+    color: white;
+    font-size: 0.8em;
+}
+.select_option {
+    /*color: white;*/
+    position: relative;
+    top: 0%;
+    left: 5%;
+    font-size: 0.8em;
+}
+.select_option_add {
+    /*color: white;*/
+    position: relative;
+    top: 0%;
+    left: 1%;
+    font-size: 0.8em;
+}
+
+
+.ui_button_0 {
+    color: white;
+    background-color: gray;
+    border: outset 2px white;
+}
+
+    .ui_button_0:active {
+        color: gray;
+        background-color: white;
+        border: outset 2px white;
+    }
+.ui_button_danger_0 {
+    color: white;
+    background-color: red;
+    border: outset 2px indianred;
+}
+
+    .ui_button_danger_0:active {
+        color: white;
+        background-color: orangered;
+        border: outset 2px white;
+    }
+
+
+.ui_select_0 {
+    color: white;
+    background-color: darkslategray;
+    border: outset 2px white;
+}
+
+.ui_textarea_0 {
+    color: white;
+    background-color: gray;
+    border: dashed 2px white;
+}
+
+
+.tab-switchMain {
+    font-family: textName;
+
+    display: flex; /* タブを横並びに */
+
+    flex-wrap: wrap; /* 幅に応じて折り返し */
+    margin: auto; /* コンテナの中央寄せ */
+    justify-content: center; /* タブの中央寄せ */
+    gap: 5px; /* タブ間の余白 */
+}
+
+    /* 各タブボタンの設定 */
+    .tab-switchMain > label {
+        flex: 1 1 auto; /* タブが均等に幅をとるが、幅を超えると折り返す */
+        /*order: -1;*/ /* 上部に表示する */
+        position: absolute; /* 絶対位置指定用の基準 */
+        padding: .5em 1em; /* 上下左右の内側余白 */
+        text-align: center; /* 文字を中央揃え */
+        cursor: pointer; /* ポインターを指アイコンに変更 */
+        padding: 5px;
+        font-family: textName;
+        border: 6px solid rgb(240, 240, 240, 1);
+        border-radius: 45px; /* 角の丸み */
+    }
+/* 各タブボタンの設定 */
+    .tab-switchMain > label {
+        flex: 1 1 auto; /* タブが均等に幅をとるが、幅を超えると折り返す */
+        /*order: -1;*/ /* 上部に表示する */
+        position: relative; /* 絶対位置指定用の基準 */
+        padding: .5em 1em; /* 上下左右の内側余白 */
+        /*background-color: rgb(250, 200, 30, 1);*/ /* 背景色 */
+        background: url('./assets/img/circlen/starback.png') repeat center center;
+        background-blend-mode: overlay; /* 混ぜ合わせのモード */
+
+        background-size: 300% auto;
+        color: rgb(240, 240, 240, 0.9); /* 文字色 */
+        text-align: center; /* 文字を中央揃え */
+        cursor: pointer; /* ポインターを指アイコンに変更 */
+
+        text-shadow: +1.5px +0px 0px rgb(30, 120, 240, 1), -1.5px +0px 0px rgb(30, 120, 240, 1), +0px +1.5px 0px rgb(30, 120, 240, 1), +0px -1.5px 0px rgb(30, 120, 240, 1), +1.5px +1.5px 0px rgb(30, 120, 240, 1), -1.5px +1.5px 0px rgb(30, 120, 240, 1), +1.5px -1.5px 0px rgb(30, 120, 240, 1), -1.5px -1.5px 0px rgb(30, 120, 240, 1);
+        border-radius: 45px; /* 角の丸み */
+    }
+        .tab-switchMain > label::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: -4px;
+            bottom: -4px;
+            left: -4px;
+            right: -4px;
+            border: 3px solid rgb(30, 120, 240, 1);
+            border-radius: 45px; /* 角の丸み */
+        }
+
+@keyframes tabSwitchMainIn_Pos {
+    0% {
+        transform: translateY(-8%);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(-8%);
+    }
+}
+@keyframes tabSwitchMainIn_BgScroll {
+    0% {
+        background-position: 0 0;
+        /*        background-position-x: 0%;
+        background-position-y: 0%;*/
+    }
+    100% {
+        background-position: -1980px 1080px;
+        /*        background-position-x: 60%;
+        background-position-y: -60%;*/
+    }
+}
+    /* タブボタンのホバーおよび選択状態のスタイル */
+.tab-switchMain > label:hover,
+.tab-switchMain label:has(:checked) {
+    /*background-color: rgb(250, 250, 130, 1);*/ /* 背景色 */
+    background-color: rgb(160, 160, 10, 1); /* 背景色 */
+    /*color: rgb(60, 40, 0, 0.9);*/ /* 文字色 */
+}
+.tab-switchMain label:has(:checked) {
+    animation: 
+        tabSwitchMainIn_Pos 3s ease-in-out infinite,
+        tabSwitchMainIn_BgScroll 30s linear infinite
+        ;
+}
+
+/* ラジオボタン自体は非表示 */
+.tab-switchMain input {
+    display: none; /* 見た目に表示されないようにする */
+}
+
+/* タブコンテンツのスタイル */
+.tab-switchMain > div {
+    position: absolute; /* 絶対位置指定用の基準 */
+    display: none; /* 初期状態では非表示 */
+    width: 100%; /* コンテンツ幅を全体に */
+    padding: 1.5em 1em; /* 内側余白 */
+}
+
+/* 選択されたタブのコンテンツを表示 */
+.tab-switchMain label:has(:checked) + div {
+    display: block; /* 選択されたタブに対応するコンテンツを表示 */
+}
+
+
+
+
+
+
+/* タブ全体を囲むコンテナの設定 */
+.tab-switchSub {
+    font-family: textGame;
+    /*display: flex; */
+
+    display: flow; /* タブを横並びに */
+
+    flex-wrap: wrap; /* 幅に応じて折り返し */
+    margin: auto; /* コンテナの中央寄せ */
+    justify-content: center; /* タブの中央寄せ */
+    gap: 5px; /* タブ間の余白 */
+}
+
+    /* 各タブボタンの設定 */
+.tab-switchSub > label {
+    flex: 1 1 auto; /* タブが均等に幅をとるが、幅を超えると折り返す */
+    order: -1; /* 上部に表示する */
+    position: absolute; /* 絶対位置指定用の基準 */
+    padding: .7em 1em; /* 上下左右の内側余白 */
+    background-color: #f2f3f4; /* 背景色 */
+    color: #999; /* 文字色 */
+    text-align: center; /* 文字を中央揃え */
+    cursor: pointer; /* ポインターを指アイコンに変更 */
+
+    border-radius: 45px; /* 角の丸み */
+}
+
+        /* タブボタンのホバーおよび選択状態のスタイル */
+.tab-switchSub > label:hover,
+.tab-switchSub label:has(:checked) {
+    background-color: #757F96; /* ホバー/選択時の背景色 */
+    color: #fff; /* ホバー/選択時の文字色 */
+}
+
+    /* ラジオボタン自体は非表示 */
+.tab-switchSub input {
+    display: none; /* 見た目に表示されないようにする */
+}
+
+    /* タブコンテンツのスタイル */
+.tab-switchSub > div {
+    position: absolute; /* 絶対位置指定用の基準 */
+    display: none; /* 初期状態では非表示 */
+    width: 100%; /* コンテンツ幅を全体に */
+    padding: 1.5em 1em; /* 内側余白 */
+}
+
+    /* 選択されたタブのコンテンツを表示 */
+    .tab-switchSub label:has(:checked) + div {
+        display: block; /* 選択されたタブに対応するコンテンツを表示 */
+    }
+
+
+.tab-switchMainLabel {
+    position: absolute;
+    bottom: 10%;
+}
+.tab-switchMainInput {
+    position: absolute;
+    bottom: 10%;
+}
+.tab-content {
+    display:none;
+    top: 10%;
+    left: calc(160px);
+}
+.tab-contentText {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    /*height: 70%;*/
+    /*width: calc(100% - 160px -100px);*/
+     
+    /*background-color: rgb(250, 250, 250, 0.85); */   
+    background-color: rgb(180, 180, 180, 0.8);
+    font-family: textGame;
+    /*border: 2px solid #757F96;*/
+    border: 4px solid rgb(250, 250, 250);
+    border-radius: 25px; /* 角の丸み */
+    padding: 13px;
+    
+    font-weight: 900;
+    color: rgb(0, 30, 30, 1);
+    text-shadow: 
+        +1.5px +0.0px 0px rgb(230, 230, 240, 1),
+        -1.5px +0.0px 0px rgb(230, 230, 240, 1), 
+        +0.0px +1.5px 0px rgb(230, 230, 240, 1),
+        +0.0px -1.5px 0px rgb(230, 230, 240, 1),
+        +1.5px +1.5px 0px rgb(230, 230, 240, 1),
+        -1.5px +1.5px 0px rgb(230, 230, 240, 1),
+        +1.5px -1.5px 0px rgb(230, 230, 240, 1),
+        -1.5px -1.5px 0px rgb(230, 230, 240, 1)
+    ;
+}
+
+.tab-contentTextTitle {
+    text-align: center; /* 水平中央寄せ */
+    padding: .5em 1em; /* 上下左右の内側余白 */
+    width: auto;
+    background: url('./assets/img/circlen/label.png') no-repeat center center;
+    background-size: contain; /* 背景を文字のサイズに合わせて調整 */
+    color: rgb(230, 230, 240, 1);
+    font-family: textName;
+    font-weight: 900;
+    text-shadow: 
+        +2.0px +0.0px 0px rgb(30, 120, 240, 1),
+        -2.0px +0.0px 0px rgb(30, 120, 240, 1), 
+        +0.0px +2.0px 0px rgb(30, 120, 240, 1),
+        +0.0px -2.0px 0px rgb(30, 120, 240, 1),
+        +2.0px +2.0px 0px rgb(30, 120, 240, 1),
+        -2.0px +2.0px 0px rgb(30, 120, 240, 1),
+        +2.0px -2.0px 0px rgb(30, 120, 240, 1),
+        -2.0px -2.0px 0px rgb(30, 120, 240, 1)
+    ;
+}
+.flex-container {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+}
+.titleLogoImg {
+    position: absolute;
+    right: 50%;
+/*    width: auto;
+    height: 40%;*/
+    width: 40%;
+    height: auto;
+}
+
+@keyframes posterIn {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes Title2_Logo_Z {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    95% {
+        transform: rotate(-1080deg);
+    }
+
+    100% {
+        transform: rotate(-1440deg);
+    }
+}
+
+@keyframes TitleInPlay {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes creditTitileIn {
+    0% {
+        transform: translateX(-200%);
+       /* transform: scale(0.01f);*/
+    }
+
+    100% {
+        transform: translateX(0%);
+        /*transform: scale(1.0);*/
+    }
+}
+@keyframes creditConteIn {
+    0% {
+        transform: translateX(-200%);
+        /* transform: scale(0.01f);*/
+    }
+    50% {
+        transform: translateX(-200%);
+        /* transform: scale(0.01f);*/
+    }
+
+    100% {
+        transform: translateX(0%);
+        /*transform: scale(1.0);*/
+    }
+}
+.anim_TitleInPlay {
+    animation: TitleInPlay 1.0s forwards; /* クラスが付与されたときに再生 */
+}
+.anim_creditTitleInPlay {
+    animation: creditTitileIn 0.4s forwards; /* クラスが付与されたときに再生 */
+}
+.anim_creditConteInPlay {
+    animation: creditConteIn 0.8s forwards; /* クラスが付与されたときに再生 */
+}
