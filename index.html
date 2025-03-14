@@ -11,29 +11,101 @@
     <meta name="theme-color" content="#000000">
     <meta name="mobile-web-app-capable" content="yes">
     <style media="screen"></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css" type="text/css">
     <link rel="shortcut icon" href="./assets/favicon.ico">
 
     <title>TeamCHOGOKIN</title>
 </head>
 
-<body id="body" style="animation: posterIn 6.0s forwards; background: url('./assets/img/circlen/starback.png') repeat center center; ">
+<body id="body" style="animation: posterIn 3.0s forwards; background: url('./assets/img/circlen/starback_2.png') repeat center center; ">
     <img id="background" src="./assets/img/circlen/poster.png"
-         style="position: absolute; width: 0%; height: 0%;">
+         style="position: relative; width: 0%; height: 0%;" alt="">
 
     <div id="head" style="z-index: 2; position: fixed; top: 0%; width: 100%; height: 8vh; background-color: rgb(250, 250, 250, 0.9); ">
-        <img id="" src="./assets/img/teamLogoHead.png" style="position: absolute; top: 1%; left: 1%; width: auto; height: 100%; ">
+        <img id="" src="./assets/img/teamLogoHead.png" style="position: absolute; top: 1%; left: 1%; width: auto; height: 100%; " alt="">
+    </div>
+
+    <div id="ContentsMain" class="bg"
+         style="position: absolute; top: 8%; pointer-events: visible; width: 100%; height: 100%; overflow-x: hidden; overflow-y: clip; ">
+
+        <div class="tab-content" style="position: absolute; width: 100%; height: 100%; overflow: visible; ">
+
+            <div class="anim_Flag" data-inanim="anim_TitleInPlay"
+                 style="position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; overflow: visible; ">
+
+                <!--<img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Y.png"
+                     style="transform: scale(60%) translateX(10%); ">
+                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Z.png"
+                     style="animation: Title2_Logo_Z 6.0s linear infinite;">
+                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo.png"
+                     style="transform: scale(40%) translateX(92%) translateY(-10%); ">-->
+                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Y.png"
+                     style="transform: scale(70%) translateX(-110%) translateY(-75%); " alt="">
+                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Z.png"
+                     style="animation: Title2_Logo_Z 15.0s linear infinite;" alt="">
+                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo.png"
+                     style="transform: scale(150%) translateX(-50%) translateY(-50%); " alt="">
+            </div>
+
+            <div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 100%; left: 0;"></div>
+
+        </div>
+
+        <div class="tab-content">
+        </div>
+
+        <div class="tab-content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            <!--<div class="htmlparts" data-htmlpath="circlen_tab_kouryaku.html" style="position: absolute; width: 100%; height: 100%;"></div>-->
+            <iframe src="circlen_tab_kouryaku.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>
+        </div>
+
+        <div class="tab-content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+
+            <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
+            <div class="anim_Flag" data-inanim="anim_BgInPlay" style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
+
+
+            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">プランナー</p>
+            <p class="tab-contentText noSubTab anim_Flag" data-inanim="anim_creditConteInPlay" style="">
+                ミナイ　ミスミ　ヒョウ
+            </p>
+            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">プログラマー</p>
+            <p class="tab-contentText noSubTab anim_Flag" data-inanim="anim_creditConteInPlay" style="">
+                ハラ　イーゴリ　タカノ　ヤヒロ　フクダ　オクヤマ
+            </p>
+            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">デザイナー</p>
+            <p class="tab-contentText noSubTab anim_Flag" data-inanim="anim_creditConteInPlay" style="">
+                ナカヤマ　セキネ　シミズ
+            </p>
+            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">サウンド</p>
+            <p class="tab-contentText noSubTab anim_Flag" data-inanim="anim_creditConteInPlay" style="">
+                キョウノ　トヨムラ<br>
+            </p>
+        </div>
+
+        <div class="tab-content">
+            <iframe src="circlen_tab_develop.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>
+        </div>
+
     </div>
 
 
-    <div id="tabs" style="z-index: 1; position: fixed; top: 0%; left: 0%; width: 100%; height: 100%;">
+    <div id="tabs" style="z-index: 2; position: fixed; top: 0%; left: 0%; width: 100%; height: 100%; pointer-events: none;">
 
-        <div id="tabsMain"
+        <div style="position: fixed; bottom: 5vh; width: 100%; height: 12vh; transform: scaleY(1.0);
+background-image: url('./assets/img/circlen/fadeback.png');
+background-size: 100% 100%; background-position: center; ">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgb(80, 80, 80, 0.5); background-size: 100% 100%; background-position: center; ">
+            </div>
+        </div>
+
+        <div id="tabsMain" class="tab_behavior" data-tabcontents="ContentsMain"
              style="pointer-events: none;
                 position: absolute; top: 0; left: 2%; width: 96%; height: 100%;">
 
             <div class="tab-switchMain"
-                 style="position: absolute; bottom: 8%; pointer-events: visible; width: 100%; ">
+                 style="position: absolute; bottom: 8%; pointer-events: visible; width: 100%; height: auto;">
 
                 <label>
                     <input id="tabMain_Game" type="radio" name="TAB" checked>
@@ -41,12 +113,12 @@
                 </label>
 
                 <label>
-                    <input id="tabMain_Develop" type="radio" name="TAB">
+                    <input id="tabMain_Sekaikan" type="radio" name="TAB">
                     世界観
                 </label>
 
                 <label>
-                    <input id="tabMain_Develop" type="radio" name="TAB">
+                    <input id="tabMain_Koryaku" type="radio" name="TAB">
                     攻略
                 </label>
 
@@ -59,115 +131,12 @@
                     <input id="tabMain_Develop" type="radio" name="TAB">
                     開発資料
                 </label>
+
             </div>
         </div>
-
-
-        <div id="tabsSub_Develop"
-             style="display:none; pointer-events: none;
-            position: absolute; top: 5%; left: 2%; width: 96%; height: 100%;">
-
-            <div class="tab-switchSub" style="pointer-events: visible; ">
-                <label style="top: 10%;">
-                    <input type="radio" name="TAB_SUB" checked>
-                    AP プランナー
-                </label>
-                <div class="tab-content">
-                    <a class="tab-contentText">
-                        AP開発資料
-                    </a>
-                </div>
-
-
-                <label style="top: 20%;">
-                    <input type="radio" name="TAB_SUB">
-                    AT プログラマー
-                </label>
-                <div class="tab-content">
-                    <a class="tab-contentText">
-                        AT開発資料
-                    </a>
-                </div>
-
-
-                <label style="top: 30%;">
-                    <input type="radio" name="TAB_SUB">
-                    AD デザイナー
-                </label>
-                <div class="tab-content">
-                    <a class="tab-contentText">
-                        AD開発資料
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 
-    <div id="ContentsMain" class="bg" 
-         style="position: absolute; top: 8%; pointer-events: visible; width: 100%; height: 100%; overflow-x: hidden; overflow-y:clip; ">
-
-        <div class="tab-content" style="position: absolute; width: 100%; height: 100%; overflow: visible; ">
-
-            <div class="anim_Flag" data-inanim="anim_TitleInPlay"
-                 style="position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; overflow: visible; ">
-
-                <!--<img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Y.png"
-         style="transform: scale(60%) translateX(10%); ">
-    <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Z.png"
-         style="animation: Title2_Logo_Z 6.0s linear infinite;">
-    <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo.png"
-         style="transform: scale(40%) translateX(92%) translateY(-10%); ">-->
-                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Y.png"
-                     style="transform: scale(70%) translateX(-110%) translateY(-75%); ">
-                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Z.png"
-                     style="animation: Title2_Logo_Z 15.0s linear infinite;">
-                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo.png"
-                     style="transform: scale(150%) translateX(-50%) translateY(-50%); ">
-            </div>
-
-                <div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 100%; left: 0;"></div>
-
-            </div>
-
-        <div class="tab-content">
-        </div>
-
-        <div class="tab-content" style="position: absolute; width: 100vw; height: 100vh;">
-            <!--<div class="htmlparts" data-htmlpath="circlen_tab_kouryaku.html" style="position: absolute; width: 100%; height: 100%;"></div>-->
-        </div>
-
-        <div class="tab-content"style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
-
-            <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
-            <div style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
-
-
-            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">プランナー</p>
-            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style="position: relative; left: 5vw; top: -1vh; width: 80vw; ">
-                ミナイ　ミスミ　ヒョウ
-            </p>
-            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">プログラマー</p>
-            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style="position: relative; left: 5vw; top: -1vh; width: 80vw; ">
-                ハラ　イーゴリ　タカノ　ヤヒロ　フクダ　オクヤマ
-            </p>
-            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">デザイナー</p>
-            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style="position: relative; left: 5vw; top: -1vh; width: 80vw; ">
-                ナカヤマ　セキネ　シミズ
-            </p>
-            <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">サウンド</p>
-            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style="position: relative; left: 5vw; top: -1vh; width: 80vw; ">
-                キョウノ　トヨムラ<br>
-            </p>
-        </div>
-
-        <div class="tab-content">
-        </div>
-
-    </div>
-
-    <div id="foot" style="position: fixed; bottom: 0%; width: 100%; height: 5vh; background-color: rgb(200, 200, 200, 0.9); ">
+    <div id="foot" style="z-index: 2; position: fixed; bottom: 0%; width: 100%; height: 5vh; background-color: rgb(200, 200, 200, 0.9); ">
 
         <a style="position: absolute; bottom: 1%; right: 1%; color: rgb(0, 30, 30, 1); font-family: textmain;">© 2025 CHOGOKIN</a>
     </div>

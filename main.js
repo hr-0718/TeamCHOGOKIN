@@ -9,13 +9,14 @@
 //-------------------------------------------------------------
 let frame = 0;
 
-let selectedIndexBefore = -1;
+//let selectedIndexBefore = -1;
 
 //-------------------------------------------------------------
 // 無限ループ
 //-------------------------------------------------------------
 async function loop() {
 
+    const elem_body = document.getElementById('body');
     //背景制御
     {
         const elem_background = document.getElementById('background');
@@ -42,48 +43,80 @@ async function loop() {
         }
     }
 
-    //メインタブ
-    const elem_tabsMain = document.getElementById('tabsMain');
-    //メインコンテンツ
-    const elem_ContentsMain = document.getElementById('ContentsMain');
+    const gtabButtons = document.querySelectorAll('.tab_behavior');
 
-    {// ラジオボタンのNodeListを取得
-        const radios = document.getElementById('tabsMain').querySelectorAll('input[type="radio"]');
 
-        let selectedIndex = 0;
-        let selectedValue = undefined;
+    // 各ラジオボタンをチェックして、選択されているものを見つける
+    for (const gtabBtn of gtabButtons) {
 
-        // 各ラジオボタンをチェックして、選択されているものを見つける
-        for (const radio of radios) {
-            if (radio.checked) {
-                selectedValue = radio;
-                break;
-            }
-            selectedIndex++;
-        }
+        //メインタブ
+        //const elem_tabsMain = document.getElementById('tabsMain');
+        const elem_tabsMain = gtabBtn;
 
-        if (selectedValue != undefined && selectedIndexBefore != selectedIndex) {
-            window.scrollTo({
-                top: 0, // 一番上に
-                left: 0, // 左端に
-                behavior: "smooth", // スムーズスクロール
-            });
-            Array.from(elem_ContentsMain.children).forEach((element) => {
-                element.style.display = "none";
-            });
-            Array.from(elem_ContentsMain.children).forEach((element, index) => {
-                if (selectedIndex == index) {
-                    element.style.display = "block";
+        //if (elem_tabsMain.dataset == undefined) {
+        //    continue;
+        //}
+        //メインコンテンツ
+        //const elem_ContentsMain = document.getElementById('ContentsMain');
+        const elem_ContentsMain = document.getElementById(elem_tabsMain.dataset.tabcontents);
 
-                    for (const ele of element.querySelectorAll('.anim_Flag')) {
-                        ele.classList.remove(ele.dataset.inanim);
-                        ele.classList.add(ele.dataset.inanim);
-                        
-                    }
+        {// ラジオボタンのNodeListを取得
+            const radios = elem_tabsMain.querySelectorAll('input[type="radio"]');
+
+            let selectedIndex = 0;
+            let selectedValue = undefined;
+
+            // 各ラジオボタンをチェックして、選択されているものを見つける
+            for (const radio of radios) {
+                if (radio.checked) {
+                    selectedValue = radio;
+                    break;
                 }
-            });
-            selectedIndexBefore = selectedIndex;
+                selectedIndex++;
+            }
+
+            if (selectedValue != undefined
+                && elem_tabsMain.dataset.selectedIndexBefore != selectedIndex) {
+
+                window.scrollTo({
+                    top: 0, // 一番上に
+                    left: 0, // 左端に
+                    behavior: "smooth", // スムーズスクロール
+                });
+                Array.from(elem_ContentsMain.children).forEach((element) => {
+                    element.style.display = "none";
+                });
+                Array.from(elem_ContentsMain.children).forEach((element, index) => {
+                    if (selectedIndex == index) {
+                        element.style.display = "block";
+
+                        for (const ele of element.querySelectorAll('.anim_Flag')) {
+                            ele.classList.remove(ele.dataset.inanim);
+                            ele.classList.add(ele.dataset.inanim);
+
+                        }
+                    }
+                });
+                elem_tabsMain.dataset.selectedIndexBefore = selectedIndex;
+            }
         }
+
+        {
+            //Array.from(elem_ContentsMain.children).forEach((element, index) => {
+            //    if (elem_tabsMain.dataset.selectedIndexBefore == index) {
+            //        const rect = element.getBoundingClientRect();
+            //        elem_body.height = rect.height + "px";
+            //        //console.log(elem_body.height);
+            //    }
+            //});
+        }
+        //if (elem_tabsMain.dataset.elementNode != undefined) {
+        //    if (elem_tabsMain.dataset.elementNode.dataset != undefined
+        //        && elem_tabsMain.dataset.elementNode.dataset.pageSizeSet != undefined) {
+        //        const rect = elem_tabsMain.dataset.elementNode.getBoundingClientRect();
+        //        document.body.height = rect.height = "px";
+        //    }
+        //}
     }
 
 
@@ -131,6 +164,46 @@ async function init() {
     //        canvasImg[k] = icon0;
     //    }
     //}
+
+    //const htmlparts = document.querySelectorAll('iframe');
+
+    //for (const iframe of htmlparts) {
+    //    // iframe のコンテンツにアクセス
+    //    iframe.onload = () => {
+    //        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document; // iframe内部のドキュメント
+    //        const content = iframeDoc.body.textContent; // iframe内部のテキストを取得
+    //        //console.log(content);
+
+    //        // 3. 親要素を取得し、置き換え
+    //        const parent = iframe.parentNode;
+    //        parent.replaceChild(content, iframe);
+    //    };
+    //}
+    const htmlparts = document.querySelectorAll('iframe');
+
+    for (const iframe of htmlparts) {
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document; // iframe内部のドキュメント
+        const content = iframeDoc.body.innerHTML; // iframe内部のテキストを取得
+        //console.log(content);
+
+        let contentNode = null;
+
+        // 新しいノードを作成
+        contentNode = document.createElement('div');
+        contentNode.innerHTML = content; // テキストを新しいノードに設定
+
+        //const children = iframeDoc.body.childNodes; // 全ての子ノードを取得
+        //for (const node of children) {
+        //    contentNode = node;
+        //    break;
+        //}
+        if (contentNode != null) {
+            // 3. 親要素を取得し、置き換え
+            const parent = iframe.parentNode;
+            parent.replaceChild(contentNode, iframe);
+        }
+    }
+
 }
 
 //-------------------------------------------------------------
