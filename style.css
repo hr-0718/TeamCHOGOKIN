@@ -28,7 +28,7 @@ body {
     padding: 0;
     font-family: sans-serif;
     background-color: black;
-    font-size: 2.4vh;
+    font-size: 2.0vh;
 }
 img {
     pointer-events: none; /* マウス操作を無効化 */
@@ -398,6 +398,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
 
 /* タブ全体を囲むコンテナの設定 */
 .tab-switchSub2 {
+    font-size: 2.2vw;
     font-family: textGame;
     display: flex;
 
@@ -711,7 +712,11 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
 }
 
 @media (min-aspect-ratio: 4/3) {
+    .tab-switchMain {
+        font-size: 3vh;
+    }
     .tab-switchSub2 {
+        font-size: 3vh;
         width: auto;
         height: 70%;
         top: 0%;
