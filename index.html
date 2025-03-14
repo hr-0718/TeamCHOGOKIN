@@ -11,7 +11,9 @@
     <meta name="theme-color" content="#000000">
     <meta name="mobile-web-app-capable" content="yes">
     <style media="screen"></style>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./style.css" type="text/css">
     <link rel="shortcut icon" href="./assets/favicon.ico">
 
@@ -20,7 +22,7 @@
 
 <body id="body" style="animation: posterIn 3.0s forwards; background: url('./assets/img/circlen/starback_2.png') repeat center center; ">
     <img id="background" src="./assets/img/circlen/poster.png"
-         style="position: relative; width: 0%; height: 0%;" alt="">
+         style="position: absolute; width: 0%; height: 100%;" alt="">
 
     <div id="head" style="z-index: 2; position: fixed; top: 0%; width: 100%; height: 8vh; background-color: rgb(250, 250, 250, 0.9); ">
         <img id="" src="./assets/img/teamLogoHead.png" style="position: absolute; top: 1%; left: 1%; width: auto; height: 100%; " alt="">
@@ -57,7 +59,71 @@
 
         <div class="tab-content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
             <!--<div class="htmlparts" data-htmlpath="circlen_tab_kouryaku.html" style="position: absolute; width: 100%; height: 100%;"></div>-->
-            <iframe src="circlen_tab_kouryaku.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>
+            <!--<iframe src="circlen_tab_kouryaku.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>-->
+            <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
+            <div class="anim_Flag" data-inanim="anim_BgInPlay" style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
+
+            <div id="ContentsSubKouryaku" class="bg tab-switchSub2_Contents"
+                 style="position: absolute;  pointer-events: auto; width: 100%; height: 100%; overflow-x: hidden; overflow-y:clip; ">
+
+                <div class="tab-content tab-switchSub2_Contents_Tab">
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">プランナー</p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+
+                    </p>
+                </div>
+
+                <div class="tab-content tab-switchSub2_Contents_Tab">
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">プログラマー</p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+
+                    </p>
+                </div>
+
+                <div class="tab-content tab-switchSub2_Contents_Tab">
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">デザイナー</p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="anim_Flag tab-switchSub2_bg" data-inanim="anim_BgInPlay"
+                 style="position: fixed; top: 8vh; width: 100%; height: 10vh; transform: scaleY(-1.0);
+background-image: url('./assets/img/circlen/fadeback.png');
+background-size: 100% 100%; background-position: center; ">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgb(80, 80, 80, 0.5); background-size: 100% 100%; background-position: center; ">
+                </div>
+            </div>
+
+            <div id="tabsSub_Kouryaku" class="tab_behavior tab-switchSub2_parent"
+                 data-tabcontents="ContentsSubKouryaku"
+                 style="pointer-events: none; position: fixed; top: 10%; width: 96%; height: 100%;">
+
+                <div class="tab-switchSub2 anim_Flag" data-inanim="anim_creditTitleInPlay"
+                     style="pointer-events: none;">
+                    <label style="top: 0%; pointer-events: auto; ">
+                        <input type="radio" name="TAB_SUB_Kouryaku" checked>
+                        操作キャラ
+                    </label>
+
+
+                    <label style="top: 10%; pointer-events: auto; ">
+                        <input type="radio" name="TAB_SUB_Kouryaku">
+                        敵キャラ
+                    </label>
+
+
+                    <label style="top: 20%; pointer-events: auto; ">
+                        <input type="radio" name="TAB_SUB_Kouryaku">
+                        ボス
+                    </label>
+                </div>
+
+            </div>
+
         </div>
 
         <div class="tab-content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
@@ -85,7 +151,286 @@
         </div>
 
         <div class="tab-content">
-            <iframe src="circlen_tab_develop.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>
+            <!--<iframe src="circlen_tab_develop.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>-->
+            <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
+            <div class="anim_Flag" data-inanim="anim_BgInPlay" style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
+
+            <div id="ContentsSubDevelop" class="bg tab-switchSub2_Contents"
+                 style="position: absolute; pointer-events: auto; width: 100%; height: 100%; overflow-x: hidden; overflow-y: clip; ">
+
+                <div class="tab-content tab-switchSub2_Contents_Tab">
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        ?
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        準備中
+                    </p>
+
+                    <!--余白-->
+                    <br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+
+
+                <div class="tab-content  tab-switchSub2_Contents_Tab" style="">
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        プロトタイプ
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        企画が定まった翌日くらいに作ったプロトタイプ<br>
+                        <video controls muted loop autoplay style="width: 60%; height: auto;">
+                            <source src="./assets/img/circlen/develop_screenshot/program/1.mp4" type="video/mp4">
+                        </video>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        α～β
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+
+                        <br>初期マップ配置<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/2.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                        最初は完全2Dだった<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/3.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                        3D空間になった　ここからHD-2Dスタイルになる<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/4.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                        円判定、攻撃力のデバッグ<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/5.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                        シェーディングテスト<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/6.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                        ポリゴンのテスト<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/7.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        マスター
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        ボス(3Dモデル)のアニメーションテスト<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/8.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                        エフェクト本格実装<br>
+                        <img src="./assets/img/circlen/develop_screenshot/program/10.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                    </p>
+
+                    <!--余白-->
+                    <br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+
+
+                <div class="tab-content tab-switchSub2_Contents_Tab">
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        初期案
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        最初期はかなりファンタジー寄りだった<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/general.jpg" style="width: 60%;" alt="" /><br>
+                        <br>
+                        ミレス、インペリウス、カイトとネオ<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/general2.png" style="width: 60%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        主人公 (白井　海斗)
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        初期は着物感が強め<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/kai1.jpg" style="width: 30%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/kai2.jpg" style="width: 30%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/kai3.png" style="width: 60%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        神崎　ネオ
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        初期は銀髪だった<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/neo-1.png" style="width: 12%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/neo0.png" style="width: 20%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/neo1.png" style="width: 60%;" alt="" /><br>
+                        制服が導入される<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/neo2.jpg" style="width: 60%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        破壊型コントリウス
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        インペリウスの没デザインを再利用<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/kn1.png" style="width: 30%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/kn2.png" style="width: 40%;" alt="" /><br>
+                        時限式殲滅爆弾（アニヒレイター）<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/kn3.jpg" style="width: 60%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/kn4.png" style="width: 50%;" alt="" /><br>
+                        元々実装する予定はなかったキャラクターですが、
+                        一人のプランナーが自己満で出した設定上のみの存在を元に
+                        メインプログラマーが半ば勝手に作り、
+                        成り行きで本作にでることになりました。<br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        ?
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        納期の都合上お蔵入りに…<br>
+                        モーションが既に出来上がっていたコントリウスが代わりに参戦する形になりました。<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/ca.png" style="width: 20%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/ca2.png" style="width: 30%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        戦闘型/狙撃型ミレス
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/mire1.jpg" style="width: 60%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/mire2.jpg" style="width: 60%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        指令型レガトス
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/lega1.jpg" style="width: 30%;" alt="" /><br>
+                        <br>
+                        なぜかネタキャラになる<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/leganeta1.png" style="width: 20%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/leganeta2.gif" style="width: 30%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        統制型インペリウス
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/inp1.jpg" style="width: 40%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/inp2.jpg" style="width: 40%;" alt="" /><br>
+                        <br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/inp6.png" style="width: 60%;" alt="" />
+                        <br>
+                        リアルすぎてゲームのテイストに合わなかったので没<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/inp3.png" style="width: 30%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/inp4.png" style="width: 30%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/chara/inp5.png" style="width: 30%;" alt="" /><br>
+                    </p>
+
+                    <!--余白-->
+                    <br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+
+                <div class="tab-content tab-switchSub2_Contents_Tab">
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        コンセプトアート
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/ca1.png" style="width: 60%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/ca2.png" style="width: 60%;" alt="" /><br>
+                        初期はステージギミックをもっと生かす予定だった<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/ca3.png" style="width: 60%;" alt="" /><br>
+                        <br>
+                        結局本実装されることはなかったお二人さん<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/ca.png" style="width: 60%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        ステージ
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/stg1.jpg" style="width: 60%;" alt="" /><br>
+                        遺跡ステージ<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/stg2.png" style="width: 60%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/stg3.jpg" style="width: 60%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        ゲーム画面イメージ
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        インゲーム<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/ui0.png" style="width: 40%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/ui1.png" style="width: 40%;" alt="" /><br>
+                        <br>
+                        ステージ選択<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/uistg1.png" style="width: 40%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/uistg2.png" style="width: 40%;" alt="" /><br>
+                        <br>
+                        キャラクター選択<br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/uich1.png" style="width: 40%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/uich2.png" style="width: 40%;" alt="" /><br>
+                    </p>
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        エフェクト
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        <img src="./assets/img/circlen/develop_screenshot/design/effect/memo.jpg" style="width: 40%;" alt="" /><br>
+                    </p>
+
+
+                    <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                        タイトル
+                    </p>
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/title1.jpg" style="width: 40%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/title2.jpg" style="width: 40%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/title3.jpg" style="width: 40%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/title4.png" style="width: 40%;" alt="" /><br>
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/title5.png" style="width: 40%;" alt="" />
+                        <img src="./assets/img/circlen/develop_screenshot/design/screen/title6.png" style="width: 40%;" alt="" /><br>
+                    </p>
+
+                    <!--余白-->
+                    <br><br><br><br><br><br><br><br><br><br>
+                </div>
+
+            </div>
+
+            <div class="anim_Flag tab-switchSub2_bg" data-inanim="anim_BgInPlay"
+                 style="position: fixed; top: 8vh; width: 100%; height: 10vh; transform: scaleY(-1.0); background-image: url('./assets/img/circlen/fadeback.png'); background-size: 100% 100%; background-position: center; ">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgb(80, 80, 80, 0.5); background-size: 100% 100%; background-position: center; ">
+                </div>
+            </div>
+
+            <div id="tabsSub_Develop" class="tab_behavior tab-switchSub2_parent"
+                 data-tabcontents="ContentsSubDevelop"
+                 style="pointer-events: none; position: fixed; top: 10%; width: 96%; height: 100%; ">
+
+                <div class="tab-switchSub2  anim_Flag" data-inanim="anim_creditTitleInPlay"
+                     style="pointer-events: none;">
+                    <label style="top: 0%; pointer-events: auto; ">
+                        <input type="radio" name="TAB_SUB_Develop" checked>
+                        プランニング
+                    </label>
+
+
+                    <label style="top: 10%; pointer-events: auto; ">
+                        <input type="radio" name="TAB_SUB_Develop">
+                        開発ログ
+                    </label>
+
+
+                    <label style="top: 20%; pointer-events: auto; ">
+                        <input type="radio" name="TAB_SUB_Develop">
+                        キャラデザイン
+                    </label>
+
+                    <label style="top: 30%; pointer-events: auto; ">
+                        <input type="radio" name="TAB_SUB_Develop">
+                        そのほかデザイン
+                    </label>
+                </div>
+
+            </div>
+
         </div>
 
     </div>

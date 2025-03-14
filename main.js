@@ -26,7 +26,8 @@ async function loop() {
             elem_background.style.width = "100%";
             elem_background.style.height = "auto";
         }
-        else {
+        else
+            if (window.innerWidth / window.innerHeight < elem_background.width / elem_background.height) {
             //elem_background.style.left = "0%";
             //elem_background.style.top = "0%";
             elem_background.style.width = "auto";
