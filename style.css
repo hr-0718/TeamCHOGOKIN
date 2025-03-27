@@ -196,7 +196,7 @@ unselectable {
         text-align: center; /* 文字を中央揃え */
         cursor: pointer; /* ポインターを指アイコンに変更 */
 
-        text-shadow: +1.5px +0px 0px rgb(30, 120, 240, 1), -1.5px +0px 0px rgb(30, 120, 240, 1), +0px +1.5px 0px rgb(30, 120, 240, 1), +0px -1.5px 0px rgb(30, 120, 240, 1), +1.5px +1.5px 0px rgb(30, 120, 240, 1), -1.5px +1.5px 0px rgb(30, 120, 240, 1), +1.5px -1.5px 0px rgb(30, 120, 240, 1), -1.5px -1.5px 0px rgb(30, 120, 240, 1);
+        text-shadow: +1.25px +0px 0px rgb(30, 120, 240, 1), -1.25px +0px 0px rgb(30, 120, 240, 1), +0px +1.25px 0px rgb(30, 120, 240, 1), +0px -1.25px 0px rgb(30, 120, 240, 1), +1.25px +1.25px 0px rgb(30, 120, 240, 1), -1.25px +1.25px 0px rgb(30, 120, 240, 1), +1.25px -1.25px 0px rgb(30, 120, 240, 1), -1.25px -1.25px 0px rgb(30, 120, 240, 1);
         border-radius: 45px; /* 角の丸み */
     }
         .tab-switchMain > label::before {
@@ -258,7 +258,7 @@ unselectable {
     position: absolute; /* 絶対位置指定用の基準 */
     display: none; /* 初期状態では非表示 */
     width: 100%; /* コンテンツ幅を全体に */
-    padding: 1.5em 1em; /* 内側余白 */
+    padding: 1.25em 1em; /* 内側余白 */
 }
 
 /* 選択されたタブのコンテンツを表示 */
@@ -315,7 +315,7 @@ unselectable {
         text-align: center; /* 文字を中央揃え */
         cursor: pointer; /* ポインターを指アイコンに変更 */
 
-        text-shadow: +1.5px +0.0px 0px rgb(240, 240, 240, 1.0), -1.5px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.5px 0px rgb(240, 240, 240, 1.0), +0.0px -1.5px 0px rgb(240, 240, 240, 1.0), +1.5px +1.5px 0px rgb(240, 240, 240, 1.0), -1.5px +1.5px 0px rgb(240, 240, 240, 1.0), +1.5px -1.5px 0px rgb(240, 240, 240, 1.0), -1.5px -1.5px 0px rgb(240, 240, 240, 1.0);
+        text-shadow: +1.25px +0.0px 0px rgb(240, 240, 240, 1.0), -1.25px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.25px 0px rgb(240, 240, 240, 1.0), +0.0px -1.25px 0px rgb(240, 240, 240, 1.0), +1.25px +1.25px 0px rgb(240, 240, 240, 1.0), -1.25px +1.25px 0px rgb(240, 240, 240, 1.0), +1.25px -1.25px 0px rgb(240, 240, 240, 1.0), -1.25px -1.25px 0px rgb(240, 240, 240, 1.0);
         border: 6px solid rgb(240, 240, 240, 1);
         border-radius: 45px; /* 角の丸み */
     }
@@ -385,7 +385,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     position: absolute; /* 絶対位置指定用の基準 */
     display: none; /* 初期状態では非表示 */
     width: 100%; /* コンテンツ幅を全体に */
-    padding: 1.5em 1em; /* 内側余白 */
+    padding: 1.25em 1em; /* 内側余白 */
 }
 
     /* 選択されたタブのコンテンツを表示 */
@@ -440,7 +440,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
         text-align: center; /* 文字を中央揃え */
         cursor: pointer; /* ポインターを指アイコンに変更 */
 
-        text-shadow: +1.5px +0.0px 0px rgb(240, 240, 240, 1.0), -1.5px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.5px 0px rgb(240, 240, 240, 1.0), +0.0px -1.5px 0px rgb(240, 240, 240, 1.0), +1.5px +1.5px 0px rgb(240, 240, 240, 1.0), -1.5px +1.5px 0px rgb(240, 240, 240, 1.0), +1.5px -1.5px 0px rgb(240, 240, 240, 1.0), -1.5px -1.5px 0px rgb(240, 240, 240, 1.0);
+        text-shadow: +1.25px +0.0px 0px rgb(240, 240, 240, 1.0), -1.25px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.25px 0px rgb(240, 240, 240, 1.0), +0.0px -1.25px 0px rgb(240, 240, 240, 1.0), +1.25px +1.25px 0px rgb(240, 240, 240, 1.0), -1.25px +1.25px 0px rgb(240, 240, 240, 1.0), +1.25px -1.25px 0px rgb(240, 240, 240, 1.0), -1.25px -1.25px 0px rgb(240, 240, 240, 1.0);
         border: 6px solid rgb(240, 240, 240, 1);
         border-radius: 45px; /* 角の丸み */
     }
@@ -511,7 +511,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     position: absolute; /* 絶対位置指定用の基準 */
     display: none; /* 初期状態では非表示 */
     width: 100%; /* コンテンツ幅を全体に */
-    padding: 1.5em 1em; /* 内側余白 */
+    padding: 1.25em 1em; /* 内側余白 */
 }
 
 /* 選択されたタブのコンテンツを表示 */
@@ -561,7 +561,8 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     /*height: 70%;*/
     /*width: calc(100% - 160px -100px);*/
     /*background-color: rgb(250, 250, 250, 0.85); */
-    background-color: rgb(180, 180, 180, 0.8);
+    /*background-color: rgb(180, 180, 180, 0.8);*/
+    background-color: rgb(160, 160, 160, 0.5);
     font-family: textGame;
     /*border: 2px solid #757F96;*/
     border: 4px solid rgb(250, 250, 250);
@@ -569,7 +570,15 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     padding: 13px;
     font-weight: 900;
     color: rgb(0, 30, 30, 1);
-    text-shadow: +1.5px +0.0px 0px rgb(230, 230, 240, 1), -1.5px +0.0px 0px rgb(230, 230, 240, 1), +0.0px +1.5px 0px rgb(230, 230, 240, 1), +0.0px -1.5px 0px rgb(230, 230, 240, 1), +1.5px +1.5px 0px rgb(230, 230, 240, 1), -1.5px +1.5px 0px rgb(230, 230, 240, 1), +1.5px -1.5px 0px rgb(230, 230, 240, 1), -1.5px -1.5px 0px rgb(230, 230, 240, 1);
+    text-shadow: 
+        +1.25px +0.0px 0px rgb(230, 230, 240, 1), 
+        -1.25px +0.0px 0px rgb(230, 230, 240, 1),
+        +0.0px +1.25px 0px rgb(230, 230, 240, 1), 
+        +0.0px -1.25px 0px rgb(230, 230, 240, 1),
+        +1.25px +1.25px 0px rgb(230, 230, 240, 1), 
+        -1.25px +1.25px 0px rgb(230, 230, 240, 1),
+        +1.25px -1.25px 0px rgb(230, 230, 240, 1),
+        -1.25px -1.25px 0px rgb(230, 230, 240, 1);
 }
 .tab-contentText {
     position: relative;
@@ -583,7 +592,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     /*background: url('./assets/img/circlen/label.png') no-repeat center center;*/
     text-align: left; /* 水平中央寄せ */
     background: url('./assets/img/circlen/label.png') no-repeat;
-    left: 15vw;
+    left: 16vw;
    /* padding: .5em 1em;*/ /* 上下左右の内側余白 */
     padding: .5em 2em; /* 上下左右の内側余白 */
     width: auto;
@@ -689,7 +698,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     }
 }
 .anim_BgInPlay {
-    animation: posterIn 1.0s forwards; /* クラスが付与されたときに再生 */
+    animation: posterIn 0.5s forwards; /* クラスが付与されたときに再生 */
 }
 .anim_BtnInPlay {
     animation: btnInPlay 1.0s forwards; /* クラスが付与されたときに再生 */
@@ -752,6 +761,19 @@ details[open] .tab-contentTextTitleArrow {
     background-position-x: 5vw;
 }
 
+.contentBg {
+    /*background: url('./assets/img/circlen/starback_2.png') repeat center center;
+    background-blend-mode: overlay;*/ /* 混ぜ合わせのモード */
+    /*background-size: auto 10%;*/
+    background-color: rgb(0, 0, 0, 0.85);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1000%);
+}
 
 
 
@@ -786,7 +808,7 @@ details[open] .tab-contentTextTitleArrow {
             font-size: 1.75vw;
         }
         .tab-contentTextTitle {
-            left: 25vw;
+            left: 26vw;
             font-size: 2.0vw;
         }
 
@@ -825,7 +847,7 @@ details[open] .tab-contentTextTitleArrow {
                 text-align: center; /* 文字を中央揃え */
                 cursor: pointer; /* ポインターを指アイコンに変更 */
 
-                text-shadow: +1.5px +0.0px 0px rgb(240, 240, 240, 1.0), -1.5px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.5px 0px rgb(240, 240, 240, 1.0), +0.0px -1.5px 0px rgb(240, 240, 240, 1.0), +1.5px +1.5px 0px rgb(240, 240, 240, 1.0), -1.5px +1.5px 0px rgb(240, 240, 240, 1.0), +1.5px -1.5px 0px rgb(240, 240, 240, 1.0), -1.5px -1.5px 0px rgb(240, 240, 240, 1.0);
+                text-shadow: +1.25px +0.0px 0px rgb(240, 240, 240, 1.0), -1.25px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.25px 0px rgb(240, 240, 240, 1.0), +0.0px -1.25px 0px rgb(240, 240, 240, 1.0), +1.25px +1.25px 0px rgb(240, 240, 240, 1.0), -1.25px +1.25px 0px rgb(240, 240, 240, 1.0), +1.25px -1.25px 0px rgb(240, 240, 240, 1.0), -1.25px -1.25px 0px rgb(240, 240, 240, 1.0);
                 border: 6px solid rgb(240, 240, 240, 1);
                 border-radius: 45px; /* 角の丸み */
             }
@@ -872,4 +894,62 @@ details[open] .tab-contentTextTitleArrow {
 }
 .tab-switchSub2_Contents_Tab::-webkit-scrollbar {
     display: none; /* Webkitベースのブラウザ (Chrome, Edge, Safari) */
+}
+
+.inlineMovie {
+    border: 5px solid rgb(30, 120, 240, 1);
+    border-radius: 45px; /* 角の丸み */
+}
+.inlineMovie::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -4px;
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+    border: 16px solid rgb(240, 240, 240, 1);
+    border-radius: 45px; /* 角の丸み */
+}
+
+/* コンテナ */
+.slider {
+    position: relative;
+    overflow: hidden; /* はみ出した部分を隠す */
+    /*background: #f0f0f0;*/
+    background: url('./assets/img/circlen/starback.png') repeat center center;
+    background-size: auto 100%;
+}
+
+/* 画像をまとめたラッパー */
+.slider-track {
+    position: absolute;
+    top: 5%;
+    height: 95%; /* コンテナの高さに合わせる */
+    display: flex;
+    gap: 12px; /* タブ間の余白 */
+    animation: slide 40s linear infinite; /* ループアニメーション */
+}
+
+/* 個々の画像 */
+    .slider-track img {
+        position: relative;
+        width: auto;
+        height: calc(100% - 22px); /* コンテナの高さに合わせる */
+    }
+    .slider-track video {
+        position: relative;
+        width: auto;
+        height: calc(100% - 22px); /* コンテナの高さに合わせる */
+    }
+
+/* アニメーション */
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* 初期位置 */
+    }
+
+    100% {
+        transform: translateX(-50%); /* 左端まで移動 */
+    }
 }

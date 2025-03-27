@@ -32,17 +32,17 @@
          style="position: absolute; top: 8%; pointer-events: visible; width: 100%; height: 100%; overflow-x: hidden; overflow-y: clip; ">
 
         <!--トップ-->
-        <div class="tab-content" style="position: absolute; width: 100%; height: 100%; overflow: visible; ">
+        <div class="tab-content" style="position: absolute; left: 0; width: 100%; height: 100%; overflow: visible; ">
 
             <div class="anim_Flag" data-inanim="anim_TitleInPlay"
-                 style="position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; overflow: visible; ">
+                 style="position: absolute; top: 0%; left: 25%; width: 100%; height: 100%; overflow: visible; ">
 
                 <!--<img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Y.png"
-                     style="transform: scale(60%) translateX(10%); ">
-                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Z.png"
-                     style="animation: Title2_Logo_Z 6.0s linear infinite;">
-                <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo.png"
-                     style="transform: scale(40%) translateX(92%) translateY(-10%); ">-->
+             style="transform: scale(60%) translateX(10%); ">
+        <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Z.png"
+             style="animation: Title2_Logo_Z 6.0s linear infinite;">
+        <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo.png"
+             style="transform: scale(40%) translateX(92%) translateY(-10%); ">-->
                 <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Y.png"
                      style="transform: scale(70%) translateX(-110%) translateY(-75%); " alt="">
                 <img class="titleLogoImg" src="./assets/img/circlen/Title2_Logo_Z.png"
@@ -52,13 +52,33 @@
             </div>
 
             <div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 100%; left: 0;"></div>
+            
+            <div class="slider" style=" position: absolute; top: 40%; left: 0; 
+       width: 100%; height: 20%;">
+                <div class="slider-track">
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_stage_in.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_kai.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_neo.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_kn.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_boss_in.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_boss_beam.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_boss_ex.mp4" autoplay loop muted playsinline></video>
 
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_stage_in.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_kai.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_neo.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_kn.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_boss_in.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_boss_beam.mp4" autoplay loop muted playsinline></video>
+                    <video class="inlineMovie" src="assets/img/circlen/demo_iseki_boss_ex.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
         </div>
 
         <!--世界観-->
         <div class="tab-content">
 
-            <div class="anim_Flag" data-inanim="anim_BgInPlay" style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
+            <div class="anim_Flag contentBg" data-inanim="anim_BgInPlay" style=""></div>
 
             <!--コンテンツ-->
             <div id="ContentsSubSekaikan" class="bg tab-switchSub2_Contents"
@@ -67,14 +87,15 @@
                 <!--あらすじ-->
                 <div class="tab-content tab-switchSub2_Contents_Tab">
 
-                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style="">
+                    <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay"
+                       style="text-align: center; background: none; border:none;">
                         ある日、世界中に未知の怪物達が出現した！<br>
                         <br>
                         怪物達のあまりの強さに、人類がとった選択は…<br>
                         <br>
                         「元の世界に送り返す」こと！<br>
                         <br>
-                        不思議なインクで囲って敵を囲って倒せ！<br>
+                        不思議なインクで敵を囲って倒せ！<br>
                     </p>
 
                     <!--余白-->
@@ -122,7 +143,7 @@
             <!--<div class="htmlparts" data-htmlpath="circlen_tab_kouryaku.html" style="position: absolute; width: 100%; height: 100%;"></div>-->
             <!--<iframe src="circlen_tab_kouryaku.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>-->
             <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
-            <div class="anim_Flag" data-inanim="anim_BgInPlay" style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
+            <div class="anim_Flag contentBg" data-inanim="anim_BgInPlay" style=""></div>
 
             <div id="ContentsSubKouryaku" class="bg tab-switchSub2_Contents"
                  style="position: absolute;  pointer-events: auto; width: 100%; height: 100%; overflow-x: hidden; overflow-y:clip; ">
@@ -191,7 +212,7 @@ background-size: 100% 100%; background-position: center; ">
         <div class="tab-content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
 
             <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
-            <div class="anim_Flag" data-inanim="anim_BgInPlay" style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
+            <div class="anim_Flag contentBg" data-inanim="anim_BgInPlay" style=""></div>
 
 
             <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">プランナー</p>
@@ -216,7 +237,7 @@ background-size: 100% 100%; background-position: center; ">
         <div class="tab-content">
             <!--<iframe src="circlen_tab_develop.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>-->
             <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
-            <div class="anim_Flag" data-inanim="anim_BgInPlay" style="background-color: rgb(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1000%);"></div>
+            <div class="anim_Flag contentBg" data-inanim="anim_BgInPlay" style=""></div>
 
             <!--コンテンツ-->
             <div id="ContentsSubDevelop" class="bg tab-switchSub2_Contents"
