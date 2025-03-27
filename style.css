@@ -161,7 +161,7 @@ unselectable {
 
     display: flex; /* タブを横並びに */
 
-    /*flex-wrap: wrap;*/ /* 幅に応じて折り返し */
+    flex-wrap: wrap; /* 幅に応じて折り返し */
     margin: auto; /* コンテナの中央寄せ */
     justify-content: center; /* タブの中央寄せ */
     gap: 12px; /* タブ間の余白 */
@@ -402,7 +402,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     font-family: textGame;
     display: flex;
 
-    /*flex-wrap: wrap;*/ /* 幅に応じて折り返し */
+    flex-wrap: wrap; /* 幅に応じて折り返し */
     margin: auto; /* コンテナの中央寄せ */
     justify-content: center; /* タブの中央寄せ */
     gap: 12px; /* タブ間の余白 */
@@ -433,6 +433,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
         background-blend-mode: overlay; /* 混ぜ合わせのモード */
 
         background-size: 300% auto;
+        font-size: 2.0vh;
         font-weight: 900;
         /*color: rgb(240, 240, 240, 0.9);*/ /* 文字色 */
         color: rgb(50, 50, 60, 1); /* 文字色 */
@@ -532,7 +533,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     display: block;
 }
 .tab-switchSub2_Contents {
-    top: 7%;
+    top: 10%;
 }
 
 
@@ -578,10 +579,14 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
 }
 
 .tab-contentTextTitle {
-    text-align: center; /* 水平中央寄せ */
-    padding: .5em 1em; /* 上下左右の内側余白 */
+    /*text-align: center;*/ /* 水平中央寄せ */
+    /*background: url('./assets/img/circlen/label.png') no-repeat center center;*/
+    text-align: left; /* 水平中央寄せ */
+    background: url('./assets/img/circlen/label.png') no-repeat;
+    left: 15vw;
+   /* padding: .5em 1em;*/ /* 上下左右の内側余白 */
+    padding: .5em 2em; /* 上下左右の内側余白 */
     width: auto;
-    background: url('./assets/img/circlen/label.png') no-repeat center center;
     background-size: contain; /* 背景を文字のサイズに合わせて調整 */
     color: rgb(230, 230, 240, 1);
     font-family: textName;
@@ -711,75 +716,152 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     background-color: transparent;
 }
 
-@media (min-aspect-ratio: 4/3) {
-    .tab-switchMain {
-        font-size: 3vh;
-    }
-    .tab-switchSub2 {
-        font-size: 3vh;
-        width: auto;
-        height: 70%;
-        top: 0%;
-        font-family: textGame;
-        display: flow;
-        /*flex-wrap: wrap;*/ /* 幅に応じて折り返し */
-        margin: auto; /* コンテナの中央寄せ */
-        justify-content: center; /* タブの中央寄せ */
-        gap: 8px; /* タブ間の余白 */
-    }
-        /* 各タブボタンの設定 */
-        .tab-switchSub2 > label {
-            flex: 1 1 auto; /* タブが均等に幅をとるが、幅を超えると折り返す */
-            order: -1; /* 上部に表示する */
-            position: absolute; /* 絶対位置指定用の基準 */
-            /*padding: .5em 1em;*/ /* 上下左右の内側余白 */
-            padding: .1em 0.5em; /* 上下左右の内側余白 */
-            /*background-color: rgb(250, 200, 30, 1);*/ /* 背景色 */
-            background: url('./assets/img/circlen/starback_2.png') repeat center center;
-            background-blend-mode: overlay; /* 混ぜ合わせのモード */
-
-            background-size: 300% auto;
-            font-weight: 900;
-            /*color: rgb(240, 240, 240, 0.9);*/ /* 文字色 */
-            color: rgb(50, 50, 60, 1); /* 文字色 */
-            text-align: center; /* 文字を中央揃え */
-            cursor: pointer; /* ポインターを指アイコンに変更 */
-
-            text-shadow: +1.5px +0.0px 0px rgb(240, 240, 240, 1.0), -1.5px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.5px 0px rgb(240, 240, 240, 1.0), +0.0px -1.5px 0px rgb(240, 240, 240, 1.0), +1.5px +1.5px 0px rgb(240, 240, 240, 1.0), -1.5px +1.5px 0px rgb(240, 240, 240, 1.0), +1.5px -1.5px 0px rgb(240, 240, 240, 1.0), -1.5px -1.5px 0px rgb(240, 240, 240, 1.0);
-            border: 6px solid rgb(240, 240, 240, 1);
-            border-radius: 45px; /* 角の丸み */
-        }
-
-    .tab-switchSub2_parent {
-        left: 1%;
-    }
-
-    .tab-switchSub2_bg {
-        display: none;
-    }
-
-    .tab-contentText .noSubTab {
-        position: relative;
-        left: 5vw;
-        top: -1vh;
-        width: 80vw;
-    }
-    .tab-contentText:not(.noSubTab) {
-        position: relative;
-        left: 20vw;
-        top: -1vh;
-        width: 65vw;
-    }
-    .tab-switchSub2 label:has(:checked) {
-        animation: tabSwitchSubIn_Pos 3s ease-in-out infinite, tabSwitchSub2In_BgScroll 30s linear infinite;
-    }
-
-    .tab-switchSub2_Contents {
-        top: 0%;
-    }
+/* Webkit系ブラウザ (Chrome, Edge, Safari) */
+summary::-webkit-details-marker {
+    display: none;
 }
 
-.tab-switchSub2_Contents_Tab {
+/* Firefox用 */
+summary {
+    list-style: none; /* Firefoxはリストスタイルの設定でアイコンを制御可能 */
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style: none; /* リストマーカーを非表示にする */
+}
+
+/* 矢印アイコン */
+.tab-contentTextTitleArrow {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%; /* 親要素の幅に合わせる */
+    height: 10%; /* 親要素の高さに合わせる */
+    background: url('./assets/img/circlen/star_tab_off.png') no-repeat;
+    background-size: auto 100%;
+    background-position-x: 5vw;
+}
+
+/* 折りたたみ状態の矢印 */
+details[open] .tab-contentTextTitleArrow {
+    background: url('./assets/img/circlen/star_tab_on_color.png') no-repeat;
+    background-size: auto 100%;
+    background-position-x: 5vw;
+}
+
+
+
+
+.tab-contentText {
+    font-size: 2.5vh;
+}
+.tab-contentTextTitle {
+    user-select: none; /* ユーザーによる選択を禁止 */
+    -webkit-user-select: none; /* Safari 用 */
+    -moz-user-select: none; /* Firefox 用 */
+    -ms-user-select: none; /* Internet Explorer 用 */
+
+    font-size: 2.75vh;
+}
+
+    @media (min-aspect-ratio: 4/3) {
+        /* 矢印アイコン */
+        .tab-contentTextTitleArrow {
+            background: url('./assets/img/circlen/star_tab_off.png') no-repeat;
+            background-size: auto 100%;
+            background-position-x: 20vw;
+        }
+
+        /* 折りたたみ状態の矢印 */
+        details[open] .tab-contentTextTitleArrow {
+            background: url('./assets/img/circlen/star_tab_on_color.png') no-repeat;
+            background-size: auto 100%;
+            background-position-x: 20vw;
+        }
+
+        .tab-contentText {
+            font-size: 1.75vw;
+        }
+        .tab-contentTextTitle {
+            left: 25vw;
+            font-size: 2.0vw;
+        }
+
+        .tab-switchMain {
+            font-size: 3vh;
+        }
+
+        .tab-switchSub2 {
+            font-size: 3vh;
+            width: auto;
+            height: 70%;
+            top: 0%;
+            font-family: textGame;
+            display: flow;
+            flex-wrap: wrap; /* 幅に応じて折り返し */
+            margin: auto; /* コンテナの中央寄せ */
+            justify-content: center; /* タブの中央寄せ */
+            gap: 8px; /* タブ間の余白 */
+        }
+            /* 各タブボタンの設定 */
+            .tab-switchSub2 > label {
+                flex: 1 1 auto; /* タブが均等に幅をとるが、幅を超えると折り返す */
+                order: -1; /* 上部に表示する */
+                position: absolute; /* 絶対位置指定用の基準 */
+                /*padding: .5em 1em;*/ /* 上下左右の内側余白 */
+                padding: .1em 0.5em; /* 上下左右の内側余白 */
+                /*background-color: rgb(250, 200, 30, 1);*/ /* 背景色 */
+                background: url('./assets/img/circlen/starback_2.png') repeat center center;
+                background-blend-mode: overlay; /* 混ぜ合わせのモード */
+
+                background-size: 300% auto;
+                font-size: 1.4vw;
+                font-weight: 900;
+                /*color: rgb(240, 240, 240, 0.9);*/ /* 文字色 */
+                color: rgb(50, 50, 60, 1); /* 文字色 */
+                text-align: center; /* 文字を中央揃え */
+                cursor: pointer; /* ポインターを指アイコンに変更 */
+
+                text-shadow: +1.5px +0.0px 0px rgb(240, 240, 240, 1.0), -1.5px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +1.5px 0px rgb(240, 240, 240, 1.0), +0.0px -1.5px 0px rgb(240, 240, 240, 1.0), +1.5px +1.5px 0px rgb(240, 240, 240, 1.0), -1.5px +1.5px 0px rgb(240, 240, 240, 1.0), +1.5px -1.5px 0px rgb(240, 240, 240, 1.0), -1.5px -1.5px 0px rgb(240, 240, 240, 1.0);
+                border: 6px solid rgb(240, 240, 240, 1);
+                border-radius: 45px; /* 角の丸み */
+            }
+
+        .tab-switchSub2_parent {
+            left: 1%;
+        }
+
+        .tab-switchSub2_bg {
+            display: none;
+        }
+
+        .tab-contentText .noSubTab {
+            position: relative;
+            left: 5vw;
+            top: -1vh;
+            width: 80vw;
+        }
+
+        .tab-contentText:not(.noSubTab) {
+            position: relative;
+            left: 20vw;
+            top: -1vh;
+            width: 65vw;
+        }
+
+        .tab-switchSub2 label:has(:checked) {
+            animation: tabSwitchSubIn_Pos 3s ease-in-out infinite, tabSwitchSub2In_BgScroll 30s linear infinite;
+        }
+
+        .tab-switchSub2_Contents {
+            top: 0%;
+        }
+    }
+
+    .tab-switchSub2_Contents_Tab {
     position: absolute;
     top: 0;
     left: 0;

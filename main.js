@@ -90,6 +90,11 @@ async function loop() {
                 Array.from(elem_ContentsMain.children).forEach((element, index) => {
                     if (selectedIndex == index) {
                         element.style.display = "block";
+                        element.scrollTo({
+                            top: 0, // 一番上に
+                            left: 0, // 左端に
+                            behavior: "smooth", // スムーズスクロール
+                        });
 
                         for (const ele of element.querySelectorAll('.anim_Flag')) {
                             ele.classList.remove(ele.dataset.inanim);
