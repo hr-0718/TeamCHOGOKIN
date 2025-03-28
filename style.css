@@ -24,6 +24,7 @@
     --vh: 0;
 }
 body {
+    width: 100vw;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
