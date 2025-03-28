@@ -11,15 +11,16 @@ let frame = 0;
 
 //let selectedIndexBefore = -1;
 
-//-------------------------------------------------------------
-// 無限ループ
-//-------------------------------------------------------------
-async function loop() {
+async function bgUpdate() {
 
     const elem_body = document.getElementById('body');
     //背景制御
     {
         const elem_background = document.getElementById('background');
+        if (elem_background == undefined) {
+            return;
+        }
+
         if (window.innerWidth / window.innerHeight > elem_background.width / elem_background.height) {
             //elem_background.style.left = "0%";
             //elem_background.style.top = "0%";
@@ -28,11 +29,11 @@ async function loop() {
         }
         else
             if (window.innerWidth / window.innerHeight < elem_background.width / elem_background.height) {
-            //elem_background.style.left = "0%";
-            //elem_background.style.top = "0%";
-            elem_background.style.width = "auto";
-            elem_background.style.height = "100%";
-        }
+                //elem_background.style.left = "0%";
+                //elem_background.style.top = "0%";
+                elem_background.style.width = "auto";
+                elem_background.style.height = "100%";
+            }
         const bgrect = elem_background.getBoundingClientRect();
 
         //const bgs = document.getElementById('body').querySelectorAll('.bg');
@@ -43,6 +44,15 @@ async function loop() {
             bg.style.height = bgrect.height + "px";
         }
     }
+
+}
+
+//-------------------------------------------------------------
+// 無限ループ
+//-------------------------------------------------------------
+async function loop() {
+
+    await bgUpdate();
 
     const gtabButtons = document.querySelectorAll('.tab_behavior');
 
@@ -127,7 +137,7 @@ async function loop() {
 
 
     //開発資料のタブ
-    const elem_tabsSub_Develop = document.getElementById('tabsSub_Develop');
+    ///const elem_tabsSub_Develop = document.getElementById('tabsSub_Develop');
 
     //{// ラジオボタンのNodeListを取得
     //    const radios = document.getElementById('tabsMain').querySelectorAll('input[type="radio"]');
@@ -185,31 +195,40 @@ async function init() {
     //        parent.replaceChild(content, iframe);
     //    };
     //}
-    const htmlparts = document.querySelectorAll('iframe');
+    //const htmlparts = document.querySelectorAll('iframe');
 
-    for (const iframe of htmlparts) {
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document; // iframe内部のドキュメント
-        const content = iframeDoc.body.innerHTML; // iframe内部のテキストを取得
-        //console.log(content);
+    //for (const iframe of htmlparts) {
+    //    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document; // iframe内部のドキュメント
+    //    const content = iframeDoc.body.innerHTML; // iframe内部のテキストを取得
+    //    //console.log(content);
 
-        let contentNode = null;
+    //    let contentNode = null;
 
-        // 新しいノードを作成
-        contentNode = document.createElement('div');
-        contentNode.innerHTML = content; // テキストを新しいノードに設定
+    //    // 新しいノードを作成
+    //    contentNode = document.createElement('div');
+    //    contentNode.innerHTML = content; // テキストを新しいノードに設定
 
-        //const children = iframeDoc.body.childNodes; // 全ての子ノードを取得
-        //for (const node of children) {
-        //    contentNode = node;
-        //    break;
-        //}
-        if (contentNode != null) {
-            // 3. 親要素を取得し、置き換え
-            const parent = iframe.parentNode;
-            parent.replaceChild(contentNode, iframe);
-        }
-    }
+    //    //const children = iframeDoc.body.childNodes; // 全ての子ノードを取得
+    //    //for (const node of children) {
+    //    //    contentNode = node;
+    //    //    break;
+    //    //}
+    //    if (contentNode != null) {
+    //        // 3. 親要素を取得し、置き換え
+    //        const parent = iframe.parentNode;
+    //        parent.replaceChild(contentNode, iframe);
+    //    }
+    //}
 
+    //await bgUpdate();
+    //document.getElementById('body').scrollTo({
+    //    top: 0, // 一番上に
+    //    left: 0, // 左端に
+    //    behavior: "smooth", // スムーズスクロール
+    //});
+
+
+    document.getElementById('initbg').style.display = "none";
 }
 
 //-------------------------------------------------------------

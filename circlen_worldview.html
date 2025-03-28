@@ -1,0 +1,148 @@
+﻿
+<!--
+    index.hlml
+    hr-0718  2025/01/05
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style media="screen"></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1">-->
+
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+
+    <title>TeamCHOGOKIN</title>
+</head>
+
+<body id="body" style="animation: posterIn 3.0s forwards; background: url('./assets/img/circlen/starback_2.png') repeat center center; overflow-x: hidden;">
+    <img id="background" src="./assets/img/circlen/poster.png"
+         style="position: absolute; width: 0%; height: 100%;" alt="">
+
+    <div id="head" style="z-index: 2; position: fixed; top: 0%; width: 100vw; height: 8vh; background: url('./assets/img/circlen/starback_2.png') repeat center center;">
+        <img id="" src="./assets/img/teamLogoHead.png" style="position: absolute; top: 1%; left: 1%; width: auto; height: 100%; " alt="">
+    </div>
+
+    <!---->
+    <div style="display: block; position: relative; left: 0; top: 10vh; width: 100vw; height: 100vh; overflow: hidden; ">
+
+        <div class="anim_BgInPlay contentBg" style=""></div>
+
+        <!--コンテンツ-->
+        <div id="ContentsSubSekaikan" class="bg tab-switchSub2_Contents"
+             style="position: absolute; pointer-events: auto; width: 100%; height: 100%; overflow-x: hidden; overflow-y: clip; ">
+
+            <!--あらすじ-->
+            <div class="tab-content tab-switchSub2_Contents_Tab">
+
+                <p class="tab-contentText anim_creditConteInPlay" 
+                   style="text-align: center; background: none; border:none;">
+                    ある日、世界中に未知の怪物達が出現した！<br>
+                    <br>
+                    怪物達のあまりの強さに、人類がとった選択は…<br>
+                    <br>
+                    「元の世界に送り返す」こと！<br>
+                    <br>
+                    不思議なインクで敵を囲って倒せ！<br>
+                </p>
+
+                <!--余白-->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            <!--プランニング-->
+            <!--<div class="tab-content tab-switchSub2_Contents_Tab">
+
+        <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+            ?
+        </p>
+        <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+            準備中
+        </p>-->
+            <!--余白-->
+            <!--<br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>-->
+
+        </div>
+
+        <div class="anim_BgInPlay tab-switchSub2_bg"
+             style="position: fixed; top: 8vh; width: 100%; height: 10vh; transform: scaleY(-1.0); background-image: url('./assets/img/circlen/fadeback.png'); background-size: 100% 100%; background-position: center; ">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgb(80, 80, 80, 0.5); background-size: 100% 100%; background-position: center; ">
+            </div>
+        </div>
+
+        <div id="tabsSub_Sekaikan" class="tab_behavior tab-switchSub2_parent"
+             data-tabcontents="ContentsSubSekaikan"
+             style="pointer-events: none; position: fixed; top: 10%; width: 96%; height: 100%; ">
+
+            <div class="tab-switchSub2  anim_creditTitleInPlay"
+                 style="pointer-events: none;">
+                <label style="top: 0%; pointer-events: auto; ">
+                    <input type="radio" name="TAB_SUB_Sekaikan" checked>
+                    あらすじ
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="footTab" style="display: block; position: relative; left: 0; top: 10vh; width: 100vw; height: 50vh; overflow: visible; ">
+
+        <label class="totoplogo" style="">
+            <img class="totoplogoimg" src="./assets/img/circlen/logo.png" style="" alt="">
+
+            <button onclick="location.href='index.html';" style=" all: unset;">
+            </button>
+
+        </label>
+
+        <div class="tab-switchMain" style="pointer-events: visible;">
+
+            <label>
+                <button onclick="location.href='circlen_worldview.html';">
+                    世界観
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_guide.html';">
+                    攻略
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_credit.html';">
+                    クレジット
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_develop.html';">
+                    開発資料
+                </button>
+
+            </label>
+
+        </div>
+    </div>
+
+    <div id="foot" style="z-index: 2; position: fixed; bottom: 0%; width: 100%; height: 5vh; background-color: rgb(200, 200, 200, 0.9); ">
+
+        <a style="position: absolute; bottom: 1%; right: 1%; color: rgb(0, 30, 30, 1); font-family: textmain;">© 2025 CHOGOKIN</a>
+    </div>
+
+    <div id="initbg" style="z-index: 999; pointer-events: visible; position: fixed; top: -10%; left: -10%; width: 200%; height: 200%; background-color: rgb(0, 0, 0, 1.0); ">
+    </div>
+
+    <script src="./entry.js"></script>
+</body>
+</html>

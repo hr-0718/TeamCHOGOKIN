@@ -1,0 +1,111 @@
+﻿<!--
+    index.hlml
+    hr-0718  2025/01/05
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style media="screen"></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1">-->
+
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+
+    <title>TeamCHOGOKIN</title>
+</head>
+
+<body id="body" style="animation: posterIn 3.0s forwards; background: url('./assets/img/circlen/starback_2.png') repeat center center; overflow-x: hidden;">
+    <img id="background" src="./assets/img/circlen/poster.png"
+         style="position: absolute; width: 0%; height: 100%;" alt="">
+
+    <div id="head" style="z-index: 2; position: fixed; top: 0%; width: 100vw; height: 8vh; background: url('./assets/img/circlen/starback_2.png') repeat center center;">
+        <img id="" src="./assets/img/teamLogoHead.png" style="position: absolute; top: 1%; left: 1%; width: auto; height: 100%; " alt="">
+    </div>
+
+    <!---->
+    <div style="display: block; position: relative; left: 0; top: 10vh; width: 100%; height: 100% ; overflow: visible; ">
+
+
+        <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
+        <div class="anim_BgInPlay contentBg" style=""></div>
+
+
+        <p class="tab-contentTextTitle anim_creditTitleInPlay" style="position:relative;">プランナー</p>
+        <p class="tab-contentText noSubTab anim_creditConteInPlay"style="">
+            ミナイ　ミスミ　ヒョウ
+        </p>
+        <p class="tab-contentTextTitle anim_creditTitleInPlay" style="position:relative;">プログラマー</p>
+        <p class="tab-contentText noSubTab anim_creditConteInPlay" style="">
+            ハラ　イーゴリ　タカノ　ヤヒロ　フクダ　オクヤマ
+        </p>
+        <p class="tab-contentTextTitle anim_creditTitleInPlay" style="position:relative;">デザイナー</p>
+        <p class="tab-contentText noSubTab anim_creditConteInPlay" style="">
+            ナカヤマ　セキネ　シミズ
+        </p>
+        <p class="tab-contentTextTitle anim_creditTitleInPlay" style="position:relative;">サウンド</p>
+        <p class="tab-contentText noSubTab anim_creditConteInPlay" style="">
+            キョウノ　トヨムラ<br>
+        </p>
+
+    </div>
+
+    <div id="footTab" style="display: block; position: relative; left: 0; top: 10vh; width: 100vw; height: 50vh; overflow: visible; ">
+
+        <label class="totoplogo" style="">
+            <img class="totoplogoimg" src="./assets/img/circlen/logo.png" style="" alt="">
+
+            <button onclick="location.href='index.html';" style=" all: unset;">
+            </button>
+
+        </label>
+
+        <div class="tab-switchMain" style="pointer-events: visible;">
+
+            <label>
+                <button onclick="location.href='circlen_worldview.html';">
+                    世界観
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_guide.html';">
+                    攻略
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_credit.html';">
+                    クレジット
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_develop.html';">
+                    開発資料
+                </button>
+
+            </label>
+
+        </div>
+    </div>
+
+    <div id="foot" style="z-index: 2; position: fixed; bottom: 0%; width: 100%; height: 5vh; background-color: rgb(200, 200, 200, 0.9); ">
+
+        <a style="position: absolute; bottom: 1%; right: 1%; color: rgb(0, 30, 30, 1); font-family: textmain;">© 2025 CHOGOKIN</a>
+    </div>
+
+    <div id="initbg" style="z-index: 999; pointer-events: visible; position: fixed; top: -10%; left: -10%; width: 200%; height: 200%; background-color: rgb(0, 0, 0, 1.0); ">
+    </div>
+
+    <script src="./entry.js"></script>
+</body>
+</html>

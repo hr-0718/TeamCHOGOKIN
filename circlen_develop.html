@@ -1,0 +1,834 @@
+﻿<!--
+    index.hlml
+    hr-0718  2025/01/05
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style media="screen"></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1">-->
+
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+
+    <title>TeamCHOGOKIN</title>
+</head>
+
+<body id="body" style="animation: posterIn 3.0s forwards; background: url('./assets/img/circlen/starback_2.png') repeat center center; overflow-x: hidden;">
+    <img  id="background" src="./assets/img/circlen/poster.png"
+         style="position: absolute; width: 0%; height: 100%;" alt="">
+
+    <div id="head" style="z-index: 2; position: fixed; top: 0%; width: 100vw; height: 8vh; background: url('./assets/img/circlen/starback_2.png') repeat center center;">
+        <img id="" src="./assets/img/teamLogoHead.png" style="position: absolute; top: 1%; left: 1%; width: auto; height: 100%; " alt="">
+    </div>
+
+    <!---->
+    <div style="display: block; position: relative; left: 0; top: 10vh; width: 100vw; height: 100vh; overflow: hidden; ">
+
+        <!--<iframe src="circlen_tab_develop.html" class="inhtml" style="width: 100vw; height: 100vh; "></iframe>-->
+        <!--<div class="bg" style="background-color: rgb(0, 0, 0, 0.5); position: absolute; top: 0; left: 0;"></div>-->
+        <div class="anim_Flag contentBg" data-inanim="anim_BgInPlay" style=""></div>
+
+        <!--コンテンツ-->
+        <div id="ContentsSubDevelop" class="bg tab-switchSub2_Contents"
+             style="position: absolute; pointer-events: auto; width: 100%; height: 100%; overflow-x: hidden; overflow-y: clip; ">
+
+            <!--プランニング-->
+            <!--<div class="tab-content tab-switchSub2_Contents_Tab">
+
+        <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+            ?
+        </p>
+        <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+            準備中
+        </p>-->
+            <!--余白-->
+            <!--<br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>-->
+            <!--設定など-->
+            <div class="tab-content tab-switchSub2_Contents_Tab">
+
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    ！開発中に出た文章をそのまま載せているため読みやすさは考慮していません！
+                </p>
+                <br>
+
+                <details>
+                    <summary class="tab-contentTextTitleArrow  anim_Flag" data-inanim="anim_creditTitleInPlay">
+                        <p class="tab-contentTextTitle" style="position:relative;">
+                            水墨画のゲーム案
+                        </p>
+                    </summary>
+                    <ul>
+                        <li>
+                            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                                水墨画のゲーム案<br>
+                                <br>
+                                <br>
+                                豪快ポイント<br>
+                                小さく書いた文字(一般的な半紙に書くぐらい)から巨大なオブジェクトが生成される。<br>
+                                小→大の変化と勢いが豪快さ。<br>
+                                <br>
+                                <br>
+                                コンセプト<br>
+                                書道で世界を救おうぜ！<br>
+                                書道を使って敵を倒そうぜ！など<br>
+                                <br>
+                                <br>
+                                概要<br>
+                                水墨画家の主人公(プレイヤー)の大筆には、書いた物を創造する力がある。それを駆使し道を切り開き、敵を倒していくアクションゲーム。<br>
+                                プレイヤーは特定の漢字を「書く」ことが出来、竹と書くと地面から竹が生え、岩と書くと空中から岩を降らせられる。<br>
+                                部位合成モード(仮)<br>
+                                例えば山、月、月と書くことで文字を崩に進化させることができる。この場合前方の地盤崩落などで攻撃。<br>
+                                熟語モード(仮)<br>
+                                例えば明、鏡、止、水と書くことで四字熟語の明鏡止水にさせることができたりする。この場合精神を落ち着かせ回復させる。<br>
+                                <br>
+                                <br>
+                                ストーリー<br>
+                                主人公は、突如として現れた「墨画獣」や暴走する「神仙」を止めながら、行方不明となった師匠、月舟(げっしゅう)を追い各地を駆け巡る。<br>
+                                <br>
+                                <br>
+                                開発にあたって<br>
+                                全体的に和を前面に出したい。プレイヤーの使うスキルや技名、敵の名前や技名などは全て和風関係(熟語や慣用句)で統一したい。<br>
+                                それらが言葉の元々の意味に合っていると尚良し。<br>
+                                <br>
+                                <br>
+                                墨画獣(ぼくがじゅう)<br>
+                                水墨画で描かれた獣が現実に現れた姿。一般的なザコ敵として登場する。<br>
+                                動物ベースとしてつくりたい。<br>
+                                <br>
+                                <br>
+                                ボス案<br>
+                                海千山千(うみせんやません)<br>
+                                長い年月経験を積み、世の中を知り尽くしてずる賢くしたたかになった様子。ずる賢い、の意味が強いため「搦手を多く使いトリッキーな動きをする」ボスにしたい。<br>
+                                <br>
+                                <br>
+                                試練奉行・伯楽(しれんぶぎょう・はくらく)<br>
+                                奉行は主君の命令を受けて物事を執行する役職。<br>
+                                伯楽は優れた資質を持つ人を見抜く力のある人物を指す「名伯楽」から取られた。「ゴリ押しの効かないちょっと強いボス」にしたい。<br>
+                                <br>
+                                <br>
+                                月舟(げっしゅう)<br>
+                                主人公の水墨画の師匠。自我を失っている。<br>
+                                ↓<br>
+                                画霊・唆染(がれい・させん)<br>
+                                月舟を操り、墨画獣の出現や神仙の暴走などを引き起こしていた全ての元凶。ラスボス。<br>
+                                月舟の「自分の思い描いたものをこの世に顕現させたい」という思いが具現化したもの。<br>
+                                主人公と同じ「書いたものを実物として召喚する能力がある」ボスにしたい。<br>
+                                相手が悪い行動をするように勧めることを意味する唆す、洗脳の類義語である染めるを合わせて唆染という名前。<br>
+                                画霊とは人物画に画家の執念が乗り移るといわれるもの。元ネタは藤原家孝による文政時代の日本の随筆『落栗物語』前編にある怪異。<br>
+                                <br>
+                                <br>
+                                ステージ案<br>
+                                ボリュームや回転率も考えて、セーブポイント有りで3つの小ステージが連続している感じ。<br>
+                                1ステージはそこまで長くしない。<br>
+                                また3ステージ目はラスボス戦のため、長さで言うと実質2ステージ。<br>
+                                <br>
+                                山紫水明の霊峰(さんしすいめいのれいほう)<br>
+                                ボス：海千山千<br>
+                                最初のステージ。簡単なチュートリアルステージで基本的な操作をさせる。<br>
+                                山紫水明は山水の景色の清らかで美しいこと。<br>
+                                霊峰は信仰の対象となる神々しい山。<br>
+                                <br>
+                                <br>
+                                一隻眼の登竜門(いっせきがんのとうりゅうもん)<br>
+                                ボス：試練奉行・伯楽<br>
+                                一隻眼はモノを見抜く特別な眼識。<br>
+                                登竜門は立身出世に必要となる難関や試練。<br>
+                                主人公の強さを見定める場所イメージで作った。<br>
+                                <br>
+                                <br>
+                                往生伏魔殿(おうじょうふくまでん)<br>
+                                ボス(ラスボス)：月舟→画霊・唆染<br>
+                                往生は死。伏魔殿は魔物の潜む殿堂。<br>
+                                ラストステージに相応しい禍々しい名前とシンプルな語感で揃えた。<br>
+                                <br>
+                                <br>
+                                <br>
+                                小ネタ<br>
+                                クリア後主人公の名前が花舟(かしゅう)であることが明かされる。<br>
+                                師匠の月舟、室町時代に実在した水墨画家雪舟と合わせて「雪月花」になる。<br>
+                                雪月花は自然の美しい景物を指す言葉。<br>
+                            </p>
+                        </li>
+                    </ul>
+                </details>
+
+                <!--余白-->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+
+            <!--設定など2-->
+            <div class="tab-content tab-switchSub2_Contents_Tab">
+
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    ！開発中に出た文章をそのまま載せているため読みやすさは考慮していません！
+                </p>
+                <br>
+
+                <details>
+                    <summary class="tab-contentTextTitleArrow  anim_Flag" data-inanim="anim_creditTitleInPlay">
+                        <p class="tab-contentTextTitle" style="position:relative;">
+                            禍津日魄思惟半尊像(まがつひのはくしゆいはんそんぞう)
+                        </p>
+                    </summary>
+                    <ul>
+                        <li>
+                            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                                禍津日魄思惟半尊像(まがつひのはくしゆいはんそんぞう)<br>
+                                <br>
+                                <br>
+                                ■概要<br>
+                                浮世絵師モチーフのボス。動く像。<br>
+                                名前が長いので「半尊像」でもいい。<br>
+                                不動明王像の左半身が欠けたような見た目をしている。<br>
+                                これはかつての「誅罰」によるもので、左半身を埋め合わせるべく多数の人間の魂や肉体を求め現世を彷徨う。<br>
+                                自分の意思で現世に来ている、他の敵とは一線を画す存在。<br>
+                                浮世絵師自体が囲ポンのイメージキャラなので、こいつをラスボスにしてもいい<br>
+                                <br>
+                                <br>
+                                ■名前の由来<br>
+                                禍津日…災害や凶事を起こす禍津日神のこと。ここでは禍津日魄思惟半尊像自身を、災害を起こす邪悪な存在として見ている。<br>
+                                魄…たましい。また月面の暗い部分<br>
+                                思惟…考えること、対象を分別すること。<br>
+                                半尊像…造語。体が半分であることから<br>
+                                <br>
+                                デザインの元ネタは当然不動明王。囲ポンのシステム上ボスをあまり動かしたくないという意味でも合っている。<br>
+                                <br>
+                                <br>
+                                ■ボスとしての性能<br>
+                                ラスボス対応想定なのでかなり強い。<br>
+                                出現した際に場に残っていたザコ敵の数に応じて「寂静(じゃくじょう)」が発動する。<br>
+                                寂静が発動した時、場の全てのザコ敵は消滅する。これは撃破数カウントに含まれない。<br>
+                                また消滅したザコ敵の数に応じて半尊像のステータスが1体につき1%ずつ強化される。<br>
+                                後述の思惟によるDPSチェック、マルチでの緊張感、苦離火螺龍王剣や鎮護浄土による脳死囲ポンの防止などこのゲームの集大成を意識している。<br>
+                                <br>
+                                <br>
+                                ■思惟(しゆい)<br>
+                                一定時間ごとに「思惟」が発動する。思惟はソロとマルチで効果が変化する。<br>
+                                ソロの場合、一定時間内に自身のHPが一定値を下回っていた場合(プレイヤーがダメージをたくさん与えていた場合)、後述の鎮護浄土の発動頻度が上昇する。<br>
+                                そうでない場合は、攻撃頻度が減少する。<br>
+                                マルチの場合、直近自分に最もダメージを与えているプレイヤーを識別し、次に思惟が発動するまでそのプレイヤーを狙い続ける。<br>
+                                仮に全員が同ダメージや一度もダメージを与えられていない場合、最も近いキャラクターになり、それでも距離が全員同じ場合は1Pから優先的に狙われる。<br>
+                                またここでいう一定時間内とは、前回の思惟から今発動した思惟までの間である。軽いDPSチェックみたいなものと思っていい。<br>
+                                自身を埋め合わせる体と魂を求めているため、強い者を思惟している。<br>
+                                <br>
+                                <br>
+                                ■攻撃パターン<br>
+                                苦離火螺龍王剣(くりからりゅうおうけん)<br>
+                                右手の剣に炎を纏わせて振るい、振った方向に炎の道を発生させる技。プレイヤーがこの上を通ると継続ダメージ。<br>
+                                炎に続いて黒い煙の龍が同じ道を螺旋状の動きで通り、炎の範囲をさらに拡大させる。<br>
+                                この龍がプレイヤーに直撃した場合、プレイヤーは数秒間スタンする。<br>
+                                剣を振ってから黒い龍出現まで半尊像は動かないため、隙ともとれる。<br>
+                                名前の由来は倶利伽羅龍王(くりからりゅうおう)。不動明王の化身で、剣の周りに炎と共に巻き付くとされる。<br>
+                                (体が)離れて苦しい半尊像が、火を用いて螺の軌道で打つ技という意味を込めた。<br>
+                                囲ポンの進路妨害であり、脳死で打つなタイミングを考えろという思いを込めた。<br>
+                                <br>
+                                鎮護浄土(ちんごじょうど)<br>
+                                半尊像の周囲かなり広範囲に攻撃予測範囲を表示し、猶予の後浄化の光と共にプレイヤーに継続ダメージを与える。<br>
+                                半尊像に密着した状態で鎮護浄土が発動した場合、避けきれずに並大抵のHPでは浄化されてしまう。<br>
+                                鎮護浄土の光が出ている間に半尊像に何らかの攻撃が的中した場合、それは無効化される。<br>
+                                内側で囲ポンし過ぎる操作への対策。<br>
+                                <br>
+                                涅槃導(ねはんのみちびき)<br>
+                                半尊像から大量の光弾が放たれ、自機を追尾してくる。<br>
+                                追尾しないフェイク弾も混ざっている。<br>
+                                涅槃とは、あらゆる煩悩を捨て悟りの境地に達していること。<br>
+                                <br>
+                                是生滅法必現昇華(ぜしょうめっぽうひつげんしょうか)<br>
+                                HP半分時に発動する大技。<br>
+                                大反射バリアが支給され、同時にザコ敵が多数召喚される。<br>
+                                一定時間ザコ敵からバリアを守り切るor全滅させると是生滅法必現昇華の発動予告が出る。<br>
+                                ここで猶予の間にバリア内に退避しろというメッセージを出したい。<br>
+                                発動した是生滅法必現昇華はバリアにより反射され、半尊像のHPを残り20%まで削る。<br>
+                                この時バリア外にプレイヤーがいた場合、最大HPの8割のダメージを受ける。<br>
+                                ザコ敵が残っていた場合、是生滅法必現昇華により消滅し、後の戦闘に影響は出さない。これは撃破数カウントに含まれない。<br>
+                                バリア耐久値が一定時間内に一定値を下回ると、バリアは消滅し是生滅法必現昇華が発動され、全てのプレイヤーに最大HPの8割のダメージを与える。これはいかなる手段でも防ぐことは出来ない。<br>
+                                是生滅法とは、命あるものはいつか必ず死ぬということ。<br>
+                                <br>
+                                入滅(にゅうめつ)<br>
+                                HP残りわずか(5%程度)で発動する大技で、入滅が発動した場合あらゆるダメージが無効化、制限時間タイマーも停止する。<br>
+                                エリアの各所にバリアが展開され、猶予時間内にバリア内に入らないと最大HPの9割のダメージを受ける。<br>
+                                入滅を阻止する手段はなく、また入滅によるダメージはいかなる手段でも防げない。<br>
+                                入滅発動後、半尊像はあらゆる行動をしなくなり、自身の敗北を受け入れる。<br>
+                                入滅とは釈迦の死。また生死を超えること。
+                            </p>
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary class="tab-contentTextTitleArrow  anim_Flag" data-inanim="anim_creditTitleInPlay">
+                        <p class="tab-contentTextTitle" style="position:relative;">
+                            浮瀬神湊公園(ふせじんそうこうえん)
+                        </p>
+                    </summary>
+                    <ul>
+                        <li>
+                            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                                浮瀬神湊公園(ふせじんそうこうえん)<br>
+                                <br>
+                                <br>
+                                浮世絵師モチーフステージ。神奈川県横浜市に位置する架空の公園。<br>
+                                <br>
+                                出現する敵は羅擾、寇乱斬。ボスは禍津日魄思惟半尊像。<br>
+                                <br>
+                                戦闘は公園内の広大なふれあいスペースで行われ、遊具やベンチなどが障害物として設置されている。<br>
+                                ステージギミックとして仕掛け噴水があり、一定時間ごとに水が噴射される。<br>
+                                プレイヤーが水を受けた場合、画面に水しぶきがかかって全体的に見づらくなる。<br>
+                                また囲ってポンのインクが重なった場合、仕掛け噴水によりかき消される。<br>
+                                敵に水がかかった場合、その敵の動きは一時的に止まる。<br>
+                                <br>
+                                ステージとしてのモデルは最も有名な浮世絵と言われる、葛飾北斎の「富嶽三十六景、神奈川沖浪裏」。<br>
+                                この画角は神奈川湊(現在の神奈川区川本町、青木町)から富士山を描いたという説があり、浮瀬神湊公園の立地はこの辺りをイメージしている。
+                            </p>
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary class="tab-contentTextTitleArrow  anim_Flag" data-inanim="anim_creditTitleInPlay">
+                        <p class="tab-contentTextTitle" style="position:relative;">
+                            オリジン&エグゼクター
+                        </p>
+                    </summary>
+                    <ul>
+                        <li>
+                            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                                オリジン&エグゼクター<br>
+                                <br>
+                                <br>
+                                ■概要<br>
+                                「オリジン」と「エグゼクター」の2体を合わせてひとつのボス。<br>
+                                ラスボス、裏ボス想定なのでかなり強い。<br>
+                                <br>
+                                <br>
+                                ■世界観設定<br>
+                                オリジンは囲ってポンのインクの力の起源で、異世界と異世界を繋ぐ力を持つ。大元を辿ればオリジンの力で現実世界に多数のモンスター達が紛れ込んで来ている。<br>
+                                エグゼクターは多次元異世界の生命を支配するための存在。<br>
+                                オリジンはエグゼクターの意志から誕生したため使命感により存在し続ける。エグゼクターは異世界を繋ぐオリジンを守る事が目的のため、2体の利害は一致している。<br>
+                                オリジンはorigin(起源)。エグゼクターはexecution(執行)。<br>
+                                <br>
+                                <br>
+                                ■ボスとしての性能<br>
+                                オリジンとエグゼクターが別々の行動を取ってくる。HPゲージは共通の1本だが内部的には別々であり、オリジンはHPゲージの3割、エグゼクターはHPゲージの7割に相当するHPを持っている。<br>
+                                また戦闘中オリジンを先に倒した場合はインクの回復量が大幅アップ、エグゼクターを先に倒した場合はオリジンも撃破になる。<br>
+                                <br>
+                                <br>
+                                ■オリジン<br>
+                                起源剛固の護り(きげんごうこのまもり)<br>
+                                最初の3秒間、オリジンに対するあらゆるダメージが0.01倍。続いて10秒間、0.1倍になる。<br>
+                                <br>
+                                戮力協心の加護(りくりょくきょうしんのかご)<br>
+                                エグゼクターのステータスを強化する。効果時間は30秒間。<br>
+                                <br>
+                                含沙射影の呪縛(がんしゃせきえいのじゅばく)<br>
+                                プレイヤーのインク回復量が半減する。<br>
+                                <br>
+                                異界異空の扉(いかいいくうのとびら)<br>
+                                オリジンのHPが30%以下、もしくはエグゼクターのHPが半分以下になった時に最優先で発動。異世界へ繋ぐゲートを解放する。<br>
+                                ゲートからは戦闘型ミレス、狙撃型ミレス、羅擾、寇乱斬がランダムで合計15体出現する。<br>
+                                <br>
+                                <br>
+                                ■エグゼクター<br>
+                                鎮圧無残の執戦(ちんあつむざんのしっせん)<br>
+                                エグゼクターの通常攻撃で、最も多く使用する。<br>
+                                攻撃範囲の表示後、プレイヤーを狙った細い4連レーザーで、追尾はして来ない。<br>
+                                <br>
+                                夢幻泡影の執戦(むげんほうようのしっせん)<br>
+                                エグゼクターの周囲に3つの球体が出現し、10秒後にこれを吸収して発動する。球体は囲ってポンで破壊できる。<br>
+                                プレイヤーを狙う太いレーザー。プレイヤーが移動した場合は追尾してくる。<br>
+                                また吸収した球体の数に応じて、レーザーの太さと威力が変化する。発動前に全ての球体を破壊した場合、スタンが取れる。<br>
+                                球体を回収するまでの間、エグゼクターは鎮圧無残の執戦が扱える。<br>
+                                <br>
+                                戒律帰惣の戒め(かいりつきそうのいましめ)<br>
+                                「Sの意志」を11体、マップ左上から順に上部4体、中央3体、下部4体召喚する。この時出現する間隔は1体につき0.1秒。<br>
+                                出現した順番に「Sの意志」は周辺を円形に一周し、範囲内にいたプレイヤーにダメージを与える。<br>
+                                「Sの意志」の攻撃が終わったら、続いて「Eの訓戒」を12体、マップ右側から順に等間隔に縦1列3体ずつ、4列召喚する。こちらも出現する間隔は1体につき0.1秒。<br>
+                                出現した順番に「Eの執行」は周辺を円形に一周し、範囲内にいたプレイヤーにダメージを与え、2秒間動けなくする。<br>
+                                惣には物事の全てという意味がある。<br>
+                                SはSurround(囲む)。EはEnclose(囲う、封入する)。<br>
+                                <br>
+                                震天崩地の裁き(しんてんほうちのさばき)<br>
+                                エグゼクターのHP残り3割で発動する大技。<br>
+                                溜めモーションに入り、周囲に「輪廻賛美の大結界」を展開する。<br>
+                                一定時間内に囲ってポンで輪廻賛美の大結界を破壊すると、震天崩地の裁きをキャンセルし、スタンする。<br>
+                                破壊できなかった場合、フィールドの全てのプレイヤーに最大HPの9割のダメージ。これはいかなる手段でも防げない。
+                            </p>
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary class="tab-contentTextTitleArrow  anim_Flag" data-inanim="anim_creditTitleInPlay">
+                        <p class="tab-contentTextTitle" style="position:relative;">
+                            ダインスレイヴ＆ティルフィング
+                        </p>
+                    </summary>
+                    <ul>
+                        <li>
+                            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                                ダインスレイヴ＆ティルフィング<br>
+                                <br>
+                                <br>
+                                ■概要<br>
+                                二つの大剣の周りに無数の剣が円形に固まって回転している姿。<br>
+                                ダインスレイヴ、ティルフィングで2体存在するが同一のボスで、HPバーも共通。<br>
+                                剣に宿った怨念の集合意識体。<br>
+                                どちらも伝説上に存在した一度抜かれたら血を見るまで収まらない魔剣。元ネタは北欧神話より魔剣ダーインスレイヴ、魔剣ティルフィング。<br>
+                                <br>
+                                <br>
+                                ■ボスとしての性能<br>
+                                今までのボスの大技→DPSチェック→カウンターの流れを撤廃。大技「魔剣撃」はプレイヤーが避けに徹するフェーズ。<br>
+                                <br>
+                                剣舞<br>
+                                ダインスレイヴ、ティルフィング以外の剣で周囲を切り刻む範囲攻撃。<br>
+                                <br>
+                                剣撃・カットラス<br>
+                                数本の剣が予備動作から一瞬で飛び出してくる技。範囲は狭いが、張り付いていると避けるのは至難の業。<br>
+                                カットラスとは海賊の扱う湾曲した刀。<br>
+                                <br>
+                                剣撃・フラガラッハ<br>
+                                ダインスレイヴ、ティルフィング以外の剣が飛び道具となり、プレイヤーを追尾してくる。<br>
+                                フラガラッハはケルト神話の剣で、自ら鞘から飛び出して敵をミサイルのように狙う。<br>
+                                <br>
+                                剣撃・アメノムラクモ<br>
+                                ダインスレイヴ、ティルフィングがランダム上下左右10マスに瞬間移動。<br>
+                                元いた座標にアメノムラクモが出現し、プレイヤーを同時に攻撃する。寇乱斬の蜃気楼と同じ効果。<br>
+                                元ネタは日本神話より天叢雲剣。<br>
+                                <br>
+                                魔剣撃<br>
+                                ダインスレイヴ＆ティルフィングのHP30%で発動する大技。<br>
+                                ダインスレイヴがプレイヤーに向かって攻撃範囲の表示の後、追尾する広範囲5連撃。続いてティルフィングがプレイヤーを追尾する5連続突進攻撃。<br>
+                                高難易度ではさらにダインスレイヴとティルフィングの同時連続攻撃を実装予定。
+                            </p>
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary class="tab-contentTextTitleArrow  anim_Flag" data-inanim="anim_creditTitleInPlay">
+                        <p class="tab-contentTextTitle" style="position:relative;">
+                            半尊像 虎 完全版
+                        </p>
+                    </summary>
+                    <ul>
+                        <li>
+                            <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                                <br>
+                                ■禍津日魄思惟半尊像の過去<br>
+                                古都・桜見沢。<br>
+                                かつて「慈光普賢寂照像(じこうふけんのじゃくしょうぞう)」と呼ばれる立派な仏像が存在していた。<br>
+                                知恵と救いの仏様であり、人々からは厚く信仰されていた。<br>
+                                仏は寂照像以外にも存在し、そのうち八大御仏(はちだいみほとけ)に数えられるほどだった。<br>
+                                ある日寂照像に魂が宿り、自らの教えを自分の口で説き始めた。しかしそれを許さなかったのが、上位の神である「流巡降(るじゅんこう)」であった。<br>
+                                流巡降は反偶像主義で、なおかつ唯一神流巡降であり続けるために寂照像の撃滅を計画。<br>
+                                放たれた一撃「誅罰」は寂照像の左半身を打ち砕き、恐ろしい魔物へと変貌させた。<br>
+                                これが禍津日魄思惟半尊像(まがつひのはくしゆいはんそんぞう)である。<br>
+                                <br>
+                                <br>
+                                ■上位神、流巡降について<br>
+                                桜見沢で信仰される三大神のうちの一柱。<br>
+                                三大神は他に「虚転軸(こてんじく)」「大煩纓(だいぼんえい)」が存在する。<br>
+                                中でも流巡降は支配と盛衰を司る神であり、三大神の中でも別格の存在。<br>
+                                <br>
+                                <br>
+                                ■「禍津盛衰之灰燼録・一」<br>
+                                この街、甚だ栄えにけり。国の中にて最も隆盛を極め、栄華盛んなりしが、知られざる怪物のために灰燼に帰しぬ。<br>
+                                怪物の名を禍津日魄思惟半尊像と呼べり。体半ばにして仏像のごとき姿を持ち、地獄の炎を操りて人々を蹂躙し、家々を焼き、全てを破壊し尽くしぬ。<br>
+                                <br>
+                                <br>
+                                ■瑞韶流転虎<br>
+                                上位神、虚転軸の使い。<br>
+                                神聖なる虎であり桜見沢の人々からは神獣として崇められていたのが、瑞韶流転虎(ずいしょうるてんのとら)である。<br>
+                                半尊像の出現により活性化した怪物邪応餮(じゃおうてつ)を討伐すべく天から遣わされた存在。<br>
+                                虚転軸は流転と属性を司る神であり、その力を一部受け継いでいる。<br>
+                                三大神側の勢力なので、半尊像とは敵対関係にあり、交戦経験もある。<br>
+                                <br>
+                                <br>
+                                ■眷属<br>
+                                寂照像、流転虎には眷属が存在した。<br>
+                                ただし、半尊像になったタイミングで眷属である天鴉(てんあ)は羅擾(らじょう)になり、修験叉(しゅげんしゃ)は寇乱斬(こうらぎ)に変貌する。<br>
+                                流転虎の眷属、援郭(えんかく)はそのままである。<br>
+                                <br>
+                                <br>
+                                ■蟲喰<br>
+                                三大神や八大御仏、引いては大衆とも異なる陣営が蟲喰(ちゅうが)である。<br>
+                                ムカデを祀り、自身の体にも大百足を宿しているとされる。桜見沢にも一部が存在している。<br>
+                                目的は神の抹殺と「蟲神様」の支配する世の確立であり、その全容は不明。<br>
+                                邪応餮は蟲喰の蟲操師、呪詛師が召喚した、さらなる異界の魔物だとも言われる。<br>
+                                <br>
+                                <br>
+                                ■蟲喰の台頭と盛衰<br>
+                                半尊像や流転虎の失踪後、桜見沢を支配したのが蟲喰であった。<br>
+                                蟲操師の召喚した魔物「源越(げんえつ)」のあまりの強さにより、上位神ですら致命傷を負ったという。<br>
+                                その後「蟲神様」を中心とした恐怖政治が始まったが、突然出現した「体が半分しかない仏像」により、全て浄化されたという。
+                            </p>
+                        </li>
+                    </ul>
+                </details>
+
+                <!--<details>
+                <summary class="tab-contentTextTitleArrow  anim_Flag" data-inanim="anim_creditTitleInPlay">
+                    <p class="tab-contentTextTitle" style="position:relative;">
+                    </p>
+                </summary>
+                <ul>
+                    <li>
+                    </li>
+                </ul>
+            </details>-->
+                <!--余白-->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+
+
+            <!--開発ログ-->
+            <div class="tab-content  tab-switchSub2_Contents_Tab" style="">
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    プロトタイプ
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    企画が定まった翌日くらいに作ったプロトタイプ<br>
+                    <video controls muted style="width: 60%; height: auto;">
+                        <source src="./assets/img/circlen/develop_screenshot/program/1.mp4" type="video/mp4">
+                    </video>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    α～β
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+
+                    <br>初期マップ配置<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/2.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                    最初は完全2Dだった<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/3.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                    3D空間になった　ここからHD-2Dスタイルになる<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/4.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                    円判定、攻撃力のデバッグ<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/5.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                    シェーディングテスト<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/6.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                    ポリゴンのテスト<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/7.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    マスター
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    ボス(3Dモデル)のアニメーションテスト<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/8.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                    エフェクト本格実装<br>
+                    <img src="./assets/img/circlen/develop_screenshot/program/10.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                </p>
+
+                <!--余白-->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+
+
+            <!--キャラデザイン-->
+            <div class="tab-content tab-switchSub2_Contents_Tab">
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    初期案
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    最初期はかなりファンタジー寄りだった<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/general.jpg" style="width: 60%;" alt="" /><br>
+                    <br>
+                    ミレス、インペリウス、カイトとネオ<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/general2.png" style="width: 60%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    主人公 (白井　海斗)
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    初期は着物感が強め<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kai1.jpg" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kai2.jpg" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kai2_2.jpg" style="width: 20%;" alt="" /><br>
+                    初期モデル<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kai2_1.png" style="width: 40%;" alt="" /><br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kai3.png" style="width: 60%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    神崎　ネオ
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    初期は銀髪だった<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/neo-1.png" style="width: 12%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/neo0.png" style="width: 20%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/neo0_1.png" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/neo0_3.png" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/neo0_2.png" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/neo1.png" style="width: 60%;" alt="" /><br>
+                    制服が導入される<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/neo2.jpg" style="width: 60%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    破壊型コントリウス
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    インペリウスの没デザインを再利用<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kn1.png" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kn4.png" style="width: 40%;" alt="" /><br>
+                    最初は剛腕、インペリウスに近いブレードを使う予定だった<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kn2.png" style="width: 50%;" alt="" /><br>
+                    時限式殲滅爆弾（アニヒレイター）<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kn3.jpg" style="width: 60%;" alt="" /><br>
+                    番外作にてハンマーを使うようになる<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kn2_1.png" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/kn2_2.png" style="width: 30%;" alt="" /><br>
+                    元々実装する予定はなかったキャラクターですが、
+                    一人のプランナーが自己満で出した設定上のみの存在を元に
+                    メインプログラマーが半ば勝手に作り、
+                    成り行きで本作にでることになりました。<br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    ?
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    納期の都合上お蔵入りに…<br>
+                    モーションが既に出来上がっていたコントリウスが代わりに参戦する形になりました。<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/ca.png" style="width: 20%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/ca2.png" style="width: 30%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    戦闘型/狙撃型ミレス
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    一輪案<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/mire1.jpg" style="width: 60%;" alt="" /><br>
+                    現在のフォルムに<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/mire2.jpg" style="width: 60%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    司令型レガトス
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    初期からデザインはほぼ完成されていた<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/lega1.jpg" style="width: 30%;" alt="" /><br>
+                    <br>
+                    なぜかネタキャラになる<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/leganeta1.png" style="width: 20%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/leganeta2.gif" style="width: 30%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    統制型インペリウス
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    初期案から大幅に変わり、現在に近いフォルムになった<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/inp1.jpg" style="width: 40%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/inp2.jpg" style="width: 40%;" alt="" /><br>
+                    <br>
+                    フォトンブレードのデザイン案<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/inp7.png" style="width: 30%;" alt="" />
+                    <br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/inp6.png" style="width: 60%;" alt="" />
+                    <br>
+                    リアルすぎてゲームのテイストに合わなかったので没<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/inp3.png" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/inp4.png" style="width: 30%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/chara/inp5.png" style="width: 30%;" alt="" /><br>
+                </p>
+
+                <!--余白-->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+
+
+            <!--その他デザイン-->
+            <div class="tab-content tab-switchSub2_Contents_Tab">
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    コンセプトアート
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/ca1.png" style="width: 60%;" alt="" /><br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/ca2.png" style="width: 60%;" alt="" /><br>
+                    初期はステージギミックをもっと生かす予定だった<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/ca3.png" style="width: 60%;" alt="" /><br>
+                    <br>
+                    結局本実装されることはなかったお二人さん<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/ca.png" style="width: 60%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    ステージ
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/stg1.jpg" style="width: 60%;" alt="" /><br>
+                    遺跡ステージ<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/stg2.png" style="width: 60%;" alt="" /><br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/stg3.jpg" style="width: 60%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    ゲーム画面イメージ
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    インゲーム<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/ui0.png" style="width: 40%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/ui1.png" style="width: 40%;" alt="" /><br>
+                    <br>
+                    ステージ選択<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/uistg1.png" style="width: 40%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/uistg2.png" style="width: 40%;" alt="" /><br>
+                    <br>
+                    キャラクター選択<br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/uich1.png" style="width: 40%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/uich2.png" style="width: 40%;" alt="" /><br>
+                </p>
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    エフェクト
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    <img src="./assets/img/circlen/develop_screenshot/design/effect/memo.jpg" style="width: 40%;" alt="" /><br>
+                </p>
+
+
+                <p class="tab-contentTextTitle anim_Flag" data-inanim="anim_creditTitleInPlay" style="position:relative;">
+                    タイトル
+                </p>
+                <p class="tab-contentText anim_Flag" data-inanim="anim_creditConteInPlay" style=" ">
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/title1.jpg" style="width: 40%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/title2.jpg" style="width: 40%;" alt="" /><br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/title3.jpg" style="width: 40%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/title4.png" style="width: 40%;" alt="" /><br>
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/title5.png" style="width: 40%;" alt="" />
+                    <img src="./assets/img/circlen/develop_screenshot/design/screen/title6.png" style="width: 40%;" alt="" /><br>
+                </p>
+
+                <!--余白-->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+
+        </div>
+
+        <div class="anim_BgInPlay tab-switchSub2_bg"
+             style="position: fixed; top: 8vh; width: 100%; height: 10vh; transform: scaleY(-1.0); background-image: url('./assets/img/circlen/fadeback.png'); background-size: 100% 100%; background-position: center; ">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgb(80, 80, 80, 0.5); background-size: 100% 100%; background-position: center; ">
+            </div>
+        </div>
+        
+        <div id="tabsSub_Develop" class="tab_behavior tab-switchSub2_parent"
+             data-tabcontents="ContentsSubDevelop"
+             style="z-index: 1; pointer-events: none; position: fixed; top: 10%; width: 96%; height: 100%; ">
+
+            <div class="tab-switchSub2  anim_creditTitleInPlay"
+                 style="pointer-events: none;">
+                <!--<label style="top: 0%; pointer-events: auto; ">
+                <input type="radio" name="TAB_SUB_Develop" checked>
+                プランニング
+            </label>-->
+
+                <label style="top: 0%; pointer-events: auto; ">
+                    <input type="radio" name="TAB_SUB_Develop" checked>
+                    設定-没案(企画時点)
+                </label>
+                <label style="top: 12%; pointer-events: auto; ">
+                    <input type="radio" name="TAB_SUB_Develop">
+                    設定-没案(企画決定後)
+                </label>
+
+
+                <label style="top: 24%; pointer-events: auto; ">
+                    <input type="radio" name="TAB_SUB_Develop">
+                    プログラム-開発ログ
+                </label>
+
+
+                <label style="top: 36%; pointer-events: auto; ">
+                    <input type="radio" name="TAB_SUB_Develop">
+                    デザイン-キャラクター
+                </label>
+
+                <label style="top: 48%; pointer-events: auto; ">
+                    <input type="radio" name="TAB_SUB_Develop">
+                    デザイン-その他
+                </label>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <div id="footTab" style="display: block; position: relative; left: 0; top: 10vh; width: 100vw; height: 50vh; overflow: visible; ">
+
+        <label class="totoplogo" style="">
+            <img class="totoplogoimg" src="./assets/img/circlen/logo.png" style="" alt="">
+
+            <button onclick="location.href='index.html';" style=" all: unset;">
+            </button>
+
+        </label>
+
+        <div class="tab-switchMain" style="pointer-events: visible;">
+
+            <label>
+                <button onclick="location.href='circlen_worldview.html';">
+                    世界観
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_guide.html';">
+                    攻略
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_credit.html';">
+                    クレジット
+                </button>
+
+            </label>
+
+            <label>
+                <button onclick="location.href='circlen_develop.html';">
+                    開発資料
+                </button>
+
+            </label>
+
+        </div>
+    </div>
+
+    <div id="foot" style="z-index: 2; position: fixed; bottom: 0%; width: 100%; height: 5vh; background-color: rgb(200, 200, 200, 0.9); ">
+
+        <a style="position: absolute; bottom: 1%; right: 1%; color: rgb(0, 30, 30, 1); font-family: textmain;">© 2025 CHOGOKIN</a>
+    </div>
+
+    <div id="initbg" style="z-index: 999; pointer-events: visible; position: fixed; top: -10%; left: -10%; width: 200%; height: 200%; background-color: rgb(0, 0, 0, 1.0); ">
+    </div>
+
+    <script src="./entry.js"></script>
+</body>
+</html>
