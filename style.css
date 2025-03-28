@@ -31,12 +31,13 @@ body {
     background-color: black;
     font-size: 2.0vh;
 }
+
 #background {
     position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100%;
+    height: auto;
 }
 img {
     pointer-events: none; /* ƒ}ƒEƒX‘€ì‚ğ–³Œø‰» */
