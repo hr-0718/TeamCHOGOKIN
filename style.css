@@ -550,6 +550,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     left: 0%;
 }
 .tab-switchSub2_parent {
+    z-index: 1;
     left: 2%;
 }
 .tab-switchSub2_bg {
