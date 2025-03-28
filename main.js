@@ -167,6 +167,14 @@ async function loop() {
 //-------------------------------------------------------------
 // 初期化処理
 //-------------------------------------------------------------
+async function initcheck() {
+    let initbg = document.getElementById('initbg');
+    if (initbg) {
+        initbg.style.display = "none";
+        return 1;
+    }
+    return initcheck();
+}
 async function init() {
 
 
@@ -228,7 +236,7 @@ async function init() {
     //});
 
 
-    document.getElementById('initbg').style.display = "none";
+    await initcheck();
 }
 
 //-------------------------------------------------------------
