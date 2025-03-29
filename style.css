@@ -193,6 +193,7 @@ unselectable {
         font-family: textName;
         border: 9px solid rgb(240, 240, 240, 1);
         border-radius: 45px; /* 角の丸み */
+        box-shadow: 6px 6px 3px rgba(10, 10, 10, 0.65); /* 影を設定 */
     }
 /* 各タブボタンの設定 */
     .tab-switchMain > label {
@@ -209,15 +210,6 @@ unselectable {
         text-align: center; /* 文字を中央揃え */
         cursor: pointer; /* ポインターを指アイコンに変更 */
 
-        text-shadow: 
-            +3px +0px 0px rgb(30, 120, 240, 1), 
-            -3px +0px 0px rgb(30, 120, 240, 1), 
-            +0px +3px 0px rgb(30, 120, 240, 1),
-            +0px -3px 0px rgb(30, 120, 240, 1),
-            +3px +3px 0px rgb(30, 120, 240, 1), 
-            -3px +3px 0px rgb(30, 120, 240, 1),
-            +3px -3px 0px rgb(30, 120, 240, 1),
-            -3px -3px 0px rgb(30, 120, 240, 1);
         border-radius: 45px; /* 角の丸み */
     }
         .tab-switchMain > label::before {
@@ -230,6 +222,7 @@ unselectable {
             right: -4px;
             border: 6px solid rgb(30, 120, 240, 1);
             border-radius: 45px; /* 角の丸み */
+            box-shadow: 0px 0px 18px rgba(180, 180, 180, 0.95); /* 影を設定 */
         }
 
 @keyframes tabSwitchMainIn_Pos {
@@ -426,7 +419,6 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
 /* タブ全体を囲むコンテナの設定 */
 .tab-switchSub2 {
     white-space: nowrap; /* 改行を禁止する */
-    font-size: 2.2vw;
     font-family: textGame;
     display: flex;
     flex-wrap: wrap; /* 幅に応じて折り返し */
@@ -460,16 +452,15 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
         background-blend-mode: overlay; /* 混ぜ合わせのモード */
 
         background-size: 300% auto;
-        font-size: 1.5vh;
         font-weight: 900;
         /*color: rgb(240, 240, 240, 0.9);*/ /* 文字色 */
         color: rgb(50, 50, 60, 1); /* 文字色 */
         text-align: center; /* 文字を中央揃え */
         cursor: pointer; /* ポインターを指アイコンに変更 */
 
-        text-shadow: +3px +0.0px 0px rgb(240, 240, 240, 1.0), -3px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +3px 0px rgb(240, 240, 240, 1.0), +0.0px -3px 0px rgb(240, 240, 240, 1.0), +3px +3px 0px rgb(240, 240, 240, 1.0), -3px +3px 0px rgb(240, 240, 240, 1.0), +3px -3px 0px rgb(240, 240, 240, 1.0), -3px -3px 0px rgb(240, 240, 240, 1.0);
         border: 6px solid rgb(240, 240, 240, 1);
         border-radius: 45px; /* 角の丸み */
+        box-shadow: 0px 0px 12px rgba(180, 180, 180, 0.75); /* 影を設定 */
     }
 
     .tab-switchSub2 > label::before {
@@ -561,7 +552,7 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     display: block;
 }
 .tab-switchSub2_Contents {
-    top: 10%;
+    top: 25%;
 }
 
 
@@ -597,15 +588,6 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     padding: 13px;
     font-weight: 900;
     color: rgb(0, 30, 30, 1);
-    text-shadow: 
-        +3px +0.0px 0px rgb(230, 230, 240, 1), 
-        -3px +0.0px 0px rgb(230, 230, 240, 1),
-        +0.0px +3px 0px rgb(230, 230, 240, 1), 
-        +0.0px -3px 0px rgb(230, 230, 240, 1),
-        +3px +3px 0px rgb(230, 230, 240, 1), 
-        -3px +3px 0px rgb(230, 230, 240, 1),
-        +3px -3px 0px rgb(230, 230, 240, 1),
-        -3px -3px 0px rgb(230, 230, 240, 1);
 }
 .tab-contentText {
     position: relative;
@@ -628,7 +610,6 @@ background-color: #757F96;*/ /* ホバー/選択時の背景色 */
     color: rgb(230, 230, 240, 1);
     font-family: textName;
     font-weight: 900;
-    text-shadow: +2.0px +0.0px 0px rgb(30, 120, 240, 1), -2.0px +0.0px 0px rgb(30, 120, 240, 1), +0.0px +2.0px 0px rgb(30, 120, 240, 1), +0.0px -2.0px 0px rgb(30, 120, 240, 1), +2.0px +2.0px 0px rgb(30, 120, 240, 1), -2.0px +2.0px 0px rgb(30, 120, 240, 1), +2.0px -2.0px 0px rgb(30, 120, 240, 1), -2.0px -2.0px 0px rgb(30, 120, 240, 1);
 }
 .flex-container {
     display: flex;
@@ -787,6 +768,15 @@ details[open] .tab-contentTextTitleArrow {
 
 .tab-contentText {
     font-size: 2.5vh;
+    text-shadow: 
+        +0.25vh +0.0px 0px rgb(230, 230, 240, 1), 
+        -0.25vh +0.0px 0px rgb(230, 230, 240, 1),
+        +0.0px +0.25vh 0px rgb(230, 230, 240, 1), 
+        +0.0px -0.25vh 0px rgb(230, 230, 240, 1),
+        +0.25vh +0.25vh 0px rgb(230, 230, 240, 1), 
+        -0.25vh +0.25vh 0px rgb(230, 230, 240, 1),
+        +0.25vh -0.25vh 0px rgb(230, 230, 240, 1),
+        -0.25vh -0.25vh 0px rgb(230, 230, 240, 1);
 }
 .tab-contentTextTitle {
     user-select: none; /* ユーザーによる選択を禁止 */
@@ -795,6 +785,15 @@ details[open] .tab-contentTextTitleArrow {
     -ms-user-select: none; /* Internet Explorer 用 */
 
     font-size: 2.75vh;
+    text-shadow:
+        +0.4vh +0.0px 0px rgb(30, 120, 240, 1),
+        -0.4vh +0.0px 0px rgb(30, 120, 240, 1),
+        +0.0px +0.4vh 0px rgb(30, 120, 240, 1),
+        +0.0px -0.4vh 0px rgb(30, 120, 240, 1), 
+        +0.4vh +0.4vh 0px rgb(30, 120, 240, 1), 
+        -0.4vh +0.4vh 0px rgb(30, 120, 240, 1),
+        +0.4vh -0.4vh 0px rgb(30, 120, 240, 1),
+        -0.4vh -0.4vh 0px rgb(30, 120, 240, 1);
 }
 
 .titleLogoImg {
@@ -887,6 +886,15 @@ details[open] .tab-contentTextTitleArrow {
     width: 95%;
     height: auto;
     font-size: 4vw;
+        text-shadow: 
+            +0.5vw +0px 0px rgb(30, 120, 240, 1), 
+            -0.5vw +0px 0px rgb(30, 120, 240, 1), 
+            +0px +0.5vw 0px rgb(30, 120, 240, 1),
+            +0px -0.5vw 0px rgb(30, 120, 240, 1),
+            +0.5vw +0.5vw 0px rgb(30, 120, 240, 1), 
+            -0.5vw +0.5vw 0px rgb(30, 120, 240, 1),
+            +0.5vw -0.5vw 0px rgb(30, 120, 240, 1),
+            -0.5vw -0.5vw 0px rgb(30, 120, 240, 1);
     padding-bottom: 40%;
 }
 .tab-switchMain > label {
@@ -905,6 +913,7 @@ details[open] .tab-contentTextTitleArrow {
     height: 100%;
     overflow: visible;
     left: 50%;
+    filter: drop-shadow(0px 0px 15px rgba(240, 120, 220, 0.85)); /* 外枠に影を追加 */
 }
 .totoplogo:hover {
     top:-5%;
@@ -917,10 +926,85 @@ details[open] .tab-contentTextTitleArrow {
     height: 70%;
     transform: translateX(-50%);
 }
+.footTabMain {
+    position: relative;
+    left: 0;
+    top: 20vh;
+    width: 100vw;
+    height: 50vh;
+}
 
 
+table {
+    /*border-collapse: collapse;*/ /* セルの境界線を結合 */
+    width: 100%; /* 表の幅を100%にする */
+}
+
+th, td {
+    border: 4px solid rgb(250, 250, 250);
+    border-radius: 45px; /* 角の丸み */
+
+    padding: 8px; /* セルの内側の余白 */
+    text-align: center; /* 文字を中央揃え */
+
+    font-size: 2.0vh;
+    text-shadow: 
+        +0.15vh +0.0px 0px rgb(230, 230, 240, 1), 
+        -0.15vh +0.0px 0px rgb(230, 230, 240, 1),
+        +0.0px +0.15vh 0px rgb(230, 230, 240, 1), 
+        +0.0px -0.15vh 0px rgb(230, 230, 240, 1),
+        +0.15vh +0.15vh 0px rgb(230, 230, 240, 1), 
+        -0.15vh +0.15vh 0px rgb(230, 230, 240, 1),
+        +0.15vh -0.15vh 0px rgb(230, 230, 240, 1),
+        -0.15vh -0.15vh 0px rgb(230, 230, 240, 1);
+}
+.td_overview {
+    border: 4px solid rgb(250, 250, 250);
+    border-radius: 45px; /* 角の丸み */
+
+    padding: 8px; /* セルの内側の余白 */
+    padding-left: 20px; /* セルの内側の余白 */
+    text-align: left; /* 文字を中央揃え */
+}
+
+th {
+    background-color: #f2f2f2; /* ヘッダー行の背景色 */
+}
+
+.tab-contentTextTitleDetailsTxtOn {
+    display: none;
+}
+
+details[open] .tab-contentTextTitleDetailsTxtOn {
+    display: block;
+}
+.tab-contentTextTitleDetailsTxtOff {
+    display: block;
+}
+details[open] .tab-contentTextTitleDetailsTxtOff {
+    display: none;
+}
 
 @media (min-aspect-ratio: 4/3) {
+th, td {
+    font-size: 1.25vw;
+    text-shadow: 
+        +0.125vw +0.0px 0px rgb(230, 230, 240, 1), 
+        -0.125vw +0.0px 0px rgb(230, 230, 240, 1),
+        +0.0px +0.125vw 0px rgb(230, 230, 240, 1), 
+        +0.0px -0.125vw 0px rgb(230, 230, 240, 1),
+        +0.125vw +0.125vw 0px rgb(230, 230, 240, 1), 
+        -0.125vw +0.125vw 0px rgb(230, 230, 240, 1),
+        +0.125vw -0.125vw 0px rgb(230, 230, 240, 1),
+        -0.125vw -0.125vw 0px rgb(230, 230, 240, 1);
+}
+    .footTabMain {
+        position: relative;
+        left: 0;
+        top: 10vh;
+        width: 100vw;
+        height: 50vh;
+    }
     .totoplogo {
         left: 0%;
         top: 0%;
@@ -979,10 +1063,28 @@ details[open] .tab-contentTextTitleArrow {
 
         .tab-contentText {
             font-size: 1.75vw;
+    text-shadow: 
+        +0.175vw +0.0px 0px rgb(230, 230, 240, 1), 
+        -0.175vw +0.0px 0px rgb(230, 230, 240, 1),
+        +0.0px +0.175vw 0px rgb(230, 230, 240, 1), 
+        +0.0px -0.175vw 0px rgb(230, 230, 240, 1),
+        +0.175vw +0.175vw 0px rgb(230, 230, 240, 1), 
+        -0.175vw +0.175vw 0px rgb(230, 230, 240, 1),
+        +0.175vw -0.175vw 0px rgb(230, 230, 240, 1),
+        -0.175vw -0.175vw 0px rgb(230, 230, 240, 1);
         }
         .tab-contentTextTitle {
             left: 26vw;
             font-size: 2.0vw;
+    text-shadow:
+        +0.18vw +0.0px 0px rgb(30, 120, 240, 1),
+        -0.18vw +0.0px 0px rgb(30, 120, 240, 1),
+        +0.0px +0.18vw 0px rgb(30, 120, 240, 1),
+        +0.0px -0.18vw 0px rgb(30, 120, 240, 1), 
+        +0.18vw +0.18vw 0px rgb(30, 120, 240, 1), 
+        -0.18vw +0.18vw 0px rgb(30, 120, 240, 1),
+        +0.18vw -0.18vw 0px rgb(30, 120, 240, 1),
+        -0.18vw -0.18vw 0px rgb(30, 120, 240, 1);
         }
 
     .tab-switchMain {
@@ -993,13 +1095,32 @@ details[open] .tab-contentTextTitleArrow {
         height: auto;
         padding-bottom: 0%;
         font-size: 2.5vw;
+        text-shadow: 
+            +0.28vw +0px 0px rgb(30, 120, 240, 1), 
+            -0.28vw +0px 0px rgb(30, 120, 240, 1), 
+            +0px +0.28vw 0px rgb(30, 120, 240, 1),
+            +0px -0.28vw 0px rgb(30, 120, 240, 1),
+            +0.28vw +0.28vw 0px rgb(30, 120, 240, 1), 
+            -0.28vw +0.28vw 0px rgb(30, 120, 240, 1),
+            +0.28vw -0.28vw 0px rgb(30, 120, 240, 1),
+            -0.28vw -0.28vw 0px rgb(30, 120, 240, 1);
     }
     .tab-switchMain > label {
         width: 15%;
     }
 
         .tab-switchSub2 {
-            font-size: 3vh;
+                font-size: 1.4vw;
+                text-shadow: 
+                    +0.1vw +0.0px 0px rgb(240, 240, 240, 1.0),
+                    -0.1vw +0.0px 0px rgb(240, 240, 240, 1.0),
+                    +0.0px +0.1vw 0px rgb(240, 240, 240, 1.0),
+                    +0.0px -0.1vw 0px rgb(240, 240, 240, 1.0), 
+                    +0.1vw +0.1vw 0px rgb(240, 240, 240, 1.0),
+                    -0.1vw +0.1vw 0px rgb(240, 240, 240, 1.0),
+                    +0.1vw -0.1vw 0px rgb(240, 240, 240, 1.0),
+                    -0.1vw -0.1vw 0px rgb(240, 240, 240, 1.0);
+
             width: auto;
             height: 70%;
             top: 0%;
@@ -1022,14 +1143,12 @@ details[open] .tab-contentTextTitleArrow {
                 background-blend-mode: overlay; /* 混ぜ合わせのモード */
 
                 background-size: 300% auto;
-                font-size: 1.4vw;
                 font-weight: 900;
                 /*color: rgb(240, 240, 240, 0.9);*/ /* 文字色 */
                 color: rgb(50, 50, 60, 1); /* 文字色 */
                 text-align: center; /* 文字を中央揃え */
                 cursor: pointer; /* ポインターを指アイコンに変更 */
-
-                text-shadow: +3px +0.0px 0px rgb(240, 240, 240, 1.0), -3px +0.0px 0px rgb(240, 240, 240, 1.0), +0.0px +3px 0px rgb(240, 240, 240, 1.0), +0.0px -3px 0px rgb(240, 240, 240, 1.0), +3px +3px 0px rgb(240, 240, 240, 1.0), -3px +3px 0px rgb(240, 240, 240, 1.0), +3px -3px 0px rgb(240, 240, 240, 1.0), -3px -3px 0px rgb(240, 240, 240, 1.0);
+                
                 border: 6px solid rgb(240, 240, 240, 1);
                 border-radius: 45px; /* 角の丸み */
             }
