@@ -958,6 +958,9 @@ th, td {
         +0.15vh -0.15vh 0px rgb(230, 230, 240, 1),
         -0.15vh -0.15vh 0px rgb(230, 230, 240, 1);
 }
+.td_title {
+    width: 30%;
+}
 .td_overview {
     border: 4px solid rgb(250, 250, 250);
     border-radius: 45px; /* Šp‚ÌŠÛ‚Ý */
