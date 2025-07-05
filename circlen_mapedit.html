@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>MapEdit HTML/JS</title>
+  <style>
+    body { margin:0; overflow:hidden; background:#222; color:#fff; font-family:sans-serif }
+    canvas { display:block; touch-action:none; }
+    .ui-btn {
+      position:absolute; z-index:10;
+      background:rgba(0,0,0,0.5);
+      color:#fff; padding:6px 12px;
+      border:none; font-size:14px;
+      cursor:pointer;
+    }
+    #fileInput { top: 70px; left:5px; }
+    #saveBtn   { top:100px; left:5px; }
+    #toggleBtn { top:140px; left:5px; }
+  </style>
+</head>
+<body>
+
+  <input  type="file"   id="fileInput" accept=".txt" class="ui-btn">
+  <button id="saveBtn"   class="ui-btn">保存</button>
+  <button id="toggleBtn" class="ui-btn">モード：設置</button>
+  <canvas id="canvas"></canvas>
+
+<script>
+  // 定数
+  const PIXEL_W   = 1440, PIXEL_H   = 810;
+  const LOGICAL_W = 144,  LOGICAL_H =  81;
+  const invScale  = 10.0, saveScale = 1/10.0;
+
+  // 状態変数
+  let canvas, ctx, cw, ch, mapScale, posX=0, posY=30;
+  let selectedTab = 0, objects = [];
+  let isDragging  = false, dragStart={}, dragCurr={}, dragRadius=30;
+  let placeMode   = true;  // true=設置モード, false=削除モード
+  let zoomScale   = 1.0 * 0.75,
+   minZoom=0.5, maxZoom=2.0, zoomSensitivity=0.001;
+  const tabLabels = ["MiresA","MiresS","Legatos","Rucs","Block"];
+
+  function init(){
+    canvas = document.getElementById('canvas');
+    ctx    = canvas.getContext('2d');
+
+    // イベント
+    window.addEventListener('resize', onResize);
+    canvas.addEventListener('mousedown', onMouseDown);
+    canvas.addEventListener('mouseup',   onMouseUp);
+    canvas.addEventListener('mousemove', onMouseMove);
+    canvas.addEventListener('wheel',     onWheel, {passive:false});
+    canvas.addEventListener('contextmenu', e=>e.preventDefault());
+    canvas.addEventListener('touchstart', onTouchStart, {passive:false});
+    canvas.addEventListener('touchmove',  onTouchMove,  {passive:false});
+    canvas.addEventListener('touchend',   onTouchEnd,   {passive:false});
+    window.addEventListener('keydown',   onKeyDown);
+
+    document.getElementById('fileInput')
+      .addEventListener('change', onFileLoad);
+    document.getElementById('saveBtn')
+      .addEventListener('click', saveToFile);
+    document.getElementById('toggleBtn')
+      .addEventListener('click', toggleMode);
+
+    onResize();
+    loadFromStorage();
+    requestAnimationFrame(loop);
+  }
+
+  function toggleMode(){
+    placeMode = !placeMode;
+    document.getElementById('toggleBtn').textContent =
+      placeMode ? "モード：設置" : "モード：削除";
+  }
+
+  function onResize(){
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    cw = canvas.width; ch = canvas.height;
+    mapScale = Math.min(cw/PIXEL_W, ch/PIXEL_H);
+  }
+
+  // 画面→論理
+  function toWorld(px,py){
+    const s = mapScale * zoomScale;
+    return {
+      x: (px - cw/2 + posX) / s,
+      y: (ch/2 - py + posY) / s
+    };
+  }
+  
+  function withinBounds(p){
+    return p.x >= -PIXEL_W/2 && p.x <= PIXEL_W/2
+        && p.y >= -PIXEL_H/2 && p.y <= PIXEL_H/2;
+  }
+
+  // 仮想マウス処理
+  function onMouseDown(e){
+    let p = toWorld(e.offsetX,e.offsetY);
+    // タブクリック
+    if (e.button===0 && e.offsetY < 50){
+      let i = Math.floor(e.offsetX / (cw/5));
+      if (i>=0 && i<5){ selectedTab=i; return; }
+    }
+    // マップクリック
+    if (e.button===0 && e.offsetY >= 50 && withinBounds(p)){
+      if (placeMode){
+        if (selectedTab<4){
+          objects.push({type:selectedTab, x1:p.x, y1:p.y, r:0});
+        } else {
+          isDragging=true; dragStart=p; dragCurr=p; dragRadius=30;
+        }
+      } else {
+        deleteAt(p);
+      }
+    }
+  }
+  function onMouseUp(e){
+    if (e.button===0 && isDragging){
+      let p = toWorld(e.offsetX,e.offsetY);
+      if (withinBounds(p)){
+        objects.push({
+          type:4,
+          x1:dragStart.x, y1:dragStart.y,
+          x2:p.x,         y2:p.y,
+          r: dragRadius
+        });
+      }
+      isDragging=false;
+    }
+  }
+  function onMouseMove(e){
+    if (isDragging){
+      let p=toWorld(e.offsetX,e.offsetY);
+      p.x=Math.max(-PIXEL_W/2,Math.min(PIXEL_W/2,p.x));
+      p.y=Math.max(-PIXEL_H/2,Math.min(PIXEL_H/2,p.y));
+      dragCurr=p;
+    }
+  }
+  function onWheel(e){
+    // Ctrl＋ホイール→ズーム
+    if (e.ctrlKey){
+      e.preventDefault();
+      zoomScale *= 1 - e.deltaY * zoomSensitivity;
+      zoomScale = Math.max(minZoom,Math.min(maxZoom,zoomScale));
+      return;
+    }
+    // ドラッグ中の半径変更
+    if (isDragging){
+      e.preventDefault();
+      if (e.deltaY<0 && dragRadius<50) dragRadius+=5;
+      if (e.deltaY>0 && dragRadius>10) dragRadius-=5;
+    }
+  }
+
+  // タッチイベントはマウス処理に委譲
+  function getTouchPos(evt){
+    let t = evt.touches[0]||evt.changedTouches[0];
+    let r = canvas.getBoundingClientRect();
+    return { x:t.clientX-r.left, y:t.clientY-r.top };
+  }
+  function onTouchStart(e){
+    e.preventDefault();
+    let p=getTouchPos(e);
+    onMouseDown({offsetX:p.x,offsetY:p.y,button:0});
+  }
+  function onTouchMove(e){
+    e.preventDefault();
+    let p=getTouchPos(e);
+    onMouseMove({offsetX:p.x,offsetY:p.y});
+  }
+  function onTouchEnd(e){
+    e.preventDefault();
+    let p=getTouchPos(e);
+    onMouseUp({offsetX:p.x,offsetY:p.y,button:0});
+  }
+
+  function deleteAt(p){
+    for (let i=objects.length-1;i>=0;i--){
+      let o=objects[i], d1=Math.hypot(p.x-o.x1,p.y-o.y1);
+      if (o.type<4){
+        let vs=(o.type<2?30:40);
+        if (d1<vs){ objects.splice(i,1); break; }
+      } else {
+        let d2 = Math.hypot(p.x-o.x2, p.y-o.y2);
+        if (d1<o.r||d2<o.r){ objects.splice(i,1); break; }
+      }
+    }
+  }
+
+  function onKeyDown(e){
+    if (e.key==='S'||e.key==='s') saveToFile();
+  }
+
+  function saveToFile(){
+    let lines=objects.map(o=>{
+      if (o.type<4)
+        return `${o.type},${o.x1*saveScale},${o.y1*-saveScale}`;
+      return `${o.type},${o.x1*saveScale},${o.y1*-saveScale},`
+           +`${o.x2*saveScale},${o.y2*-saveScale},${o.r*saveScale}`;
+    });
+    let blob=new Blob([lines.join("\n")],{type:'text/plain'}),
+        a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='MapData.txt'; a.click();
+    localStorage.setItem('mapdata', lines.join("\n"));
+    alert('保存しました');
+  }
+  function onFileLoad(e){
+    let f=e.target.files[0]; if(!f)return;
+    let r=new FileReader();
+    r.onload=()=>{ localStorage.setItem('mapdata',r.result); loadFromStorage(); };
+    r.readAsText(f);
+  }
+  function loadFromStorage(){
+    objects = [];
+    let data = localStorage.getItem('mapdata');
+    if (!data) return;
+    data.split('\n').forEach(line=>{
+      if (!line) return;
+      let t = line.split(',').map(Number);
+      if (t[0]<4){
+        objects.push({type:t[0],x1:t[1]*invScale,y1:t[2]*-invScale,r:0});
+      } else if (t.length>=6){
+        objects.push({
+          type:4,
+          x1:t[1]*invScale,y1:t[2]*-invScale,
+          x2:t[3]*invScale,y2:t[4]*-invScale,
+          r: t[5]*invScale
+        });
+      }
+    });
+  }
+
+  function loop(){
+    ctx.clearRect(0,0,cw,ch);
+
+    // 論理→画面
+    ctx.save();
+    ctx.translate(cw/2, ch/2);
+    ctx.translate(posX, posY);
+    const totalScale = mapScale * zoomScale;
+    ctx.scale(totalScale, -totalScale);
+
+    // グリッド＋境界
+    ctx.lineWidth=1/mapScale;
+    ctx.strokeStyle='rgba(25,25,25,1)';
+    ctx.beginPath();
+    for(let i=0;i<=PIXEL_W/10;i++){
+      let x=-PIXEL_W/2+10*i;
+      ctx.moveTo(x,-PIXEL_H/2);
+      ctx.lineTo(x, PIXEL_H/2);
+    }
+    for(let j=0;j<=PIXEL_H/10;j++){
+      let y=PIXEL_H/2-10*j;
+      ctx.moveTo(-PIXEL_W/2,y);
+      ctx.lineTo( PIXEL_W/2,y);
+    }
+    ctx.stroke();
+    ctx.strokeStyle='#fff';
+    ctx.lineWidth=2/mapScale;
+    ctx.strokeRect(-PIXEL_W/2,-PIXEL_H/2,PIXEL_W,PIXEL_H);
+
+    // オブジェクト／プレビュー
+    for(let o of objects){
+      if(o.type<4){
+        let vs=(o.type<2?30:40);
+        ctx.fillStyle=['#f00','#0f0','#00f','#ff0'][o.type];
+        ctx.fillRect(o.x1-vs/2,o.y1-vs/2,vs,vs);
+      } else {
+        drawCapsule(o.x1,o.y1,o.x2,o.y2,o.r,'#fff');
+      }
+    }
+    if(isDragging){
+      drawCapsule(dragStart.x,dragStart.y,dragCurr.x,dragCurr.y,dragRadius,'#888');
+    }
+    ctx.restore();
+
+    // UI描画
+    ctx.font='16px sans-serif';
+    // タブバー
+    for(let i=0;i<5;i++){
+      let w=cw/5;
+      ctx.fillStyle=(i===selectedTab?'#ccc':'#666');
+      ctx.fillRect(i*w,0,w,50);
+      ctx.fillStyle='#000';
+      ctx.fillText(tabLabels[i],i*w+10,30);
+    }
+    // ステータス
+    let eC=objects.filter(o=>o.type<4).length,
+        bC=objects.filter(o=>o.type===4).length;
+    ctx.fillStyle='#fff';
+    ctx.fillText(`Field:${PIXEL_W/10}×${PIXEL_H/10}`,cw-200,80);
+    ctx.fillText(`Enemy:${eC}`,cw-200,100);
+    ctx.fillText(`Block:${bC}`,cw-200,120);
+
+    requestAnimationFrame(loop);
+  }
+
+  function drawCapsule(x1,y1,x2,y2,r,col){
+    let dx=x2-x1, dy=y2-y1,
+        len=Math.hypot(dx,dy)||1,
+        ux=dx/len, uy=dy/len,
+        nx=-uy, ny=ux;
+    ctx.fillStyle=col;
+    ctx.beginPath();
+    ctx.moveTo(x1+nx*r,y1+ny*r);
+    ctx.lineTo(x1-nx*r,y1-ny*r);
+    ctx.lineTo(x2-nx*r,y2-ny*r);
+    ctx.lineTo(x2+nx*r,y2+ny*r);
+    ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.arc(x1,y1,r,0,2*Math.PI); ctx.fill();
+    ctx.beginPath(); ctx.arc(x2,y2,r,0,2*Math.PI); ctx.fill();
+  }
+
+  init();
+</script>
+
+</body>
+</html>
